@@ -1,0 +1,6 @@
+framework module Pods_SPKit_Tests {
+  umbrella header "Pods-SPKit_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
