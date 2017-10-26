@@ -31,20 +31,20 @@ public struct Device {
   }
 
   /// 获取设备名称
- public static let deviceName = UIDevice.current.name
+  public static let deviceName = UIDevice.current.name
   /// 获取系统版本号
- public static let sysVersion = UIDevice.current.systemVersion
+  public static let sysVersion = UIDevice.current.systemVersion
   /// 获取设备唯一标识符
- public static let deviceUUID = UIDevice.current.identifierForVendor?.uuidString
+  public static let deviceUUID = UIDevice.current.identifierForVendor?.uuidString
   /// 获取设备的型号
- public static let deviceModel = UIDevice.current.model
+  public static let deviceModel = UIDevice.current.model
 
   // 获取App的版本号
- public static let appVersion = infoDic?["CFBundleShortVersionString"]
+  public static let appVersion = infoDic?["CFBundleShortVersionString"]
   // 获取App的build版本
- public static let appBuildVersion = infoDic?["CFBundleVersion"]
+  public static let appBuildVersion = infoDic?["CFBundleVersion"]
   // 获取App的名称
- public static let appName = infoDic?["CFBundleDisplayName"]
+  public static let appName = infoDic?["CFBundleDisplayName"]
 
 }
 

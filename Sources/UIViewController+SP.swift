@@ -21,7 +21,8 @@ public extension BLExtension where Base: UIViewController {
     return base.navigationController?.visibleViewController == base
   }
 
-  public func push(vc: UIViewController, animated: Bool) {
+  public func push(vc: UIViewController?, animated: Bool) {
+    guard let vc = vc else { return }
     if let vc = vc as? UINavigationController {
       vc.pushViewController(vc, animated: animated)
     }else{
