@@ -30,7 +30,7 @@ public extension BLExtension where Base: UIViewController {
     }
   }
 
-  public func pop(animated: Bool) -> UIViewController? {
+ @discardableResult public func pop(animated: Bool) -> UIViewController? {
     if let vc = base as? UINavigationController {
       return vc.popViewController(animated: animated)
     }else{
@@ -38,7 +38,7 @@ public extension BLExtension where Base: UIViewController {
     }
   }
 
-  public func pop(vc: UIViewController, animated: Bool) -> [UIViewController]? {
+ @discardableResult public func pop(vc: UIViewController, animated: Bool) -> [UIViewController]? {
     if let vc = base as? UINavigationController {
       return vc.popToViewController(vc, animated: animated)
     }else{
@@ -46,7 +46,7 @@ public extension BLExtension where Base: UIViewController {
     }
   }
 
-  public func pop(toRootVC animated: Bool) -> [UIViewController]? {
+ @discardableResult public func pop(toRootVC animated: Bool) -> [UIViewController]? {
     if let vc = base as? UINavigationController {
       return vc.popToRootViewController(animated: animated)
     }else{
