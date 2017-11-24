@@ -86,7 +86,7 @@ public extension BLExtension where Base: UIView{
   }
 
   /// 设置LayerShadow,offset,radius
-  fileprivate func setLayerShadow(color: UIColor, offset: CGSize,radius: CGFloat) {
+  public func setShadow(color: UIColor, offset: CGSize,radius: CGFloat) {
     base.layer.shadowColor = color.cgColor
     base.layer.shadowOffset = offset
     base.layer.shadowRadius = radius
