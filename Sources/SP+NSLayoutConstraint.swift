@@ -11,7 +11,6 @@ public extension NSLayoutConstraint {
   /// 改变Constant
  public func change(constant: CGFloat) {
     let nowConstant = self.constant
-    
     self.constant = nowConstant + constant
   }
 

@@ -8,9 +8,11 @@
 import UIKit
 // MARK: - open
 public extension UIApplication {
-  public class func open(urlStr: String) {
-    guard let str = urlStr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else{ return }
-    guard let url = URL(string: str) else { return }
+
+  /// 打开链接
+  ///
+  /// - Parameter url: url
+  public class func open(url: URL) {
     if UIApplication.shared.canOpenURL(url) {
       if #available(iOS 10.0, *) {
         UIApplication.shared.open(url, completionHandler: nil)
@@ -20,8 +22,13 @@ public extension UIApplication {
     }
   }
 
-  public func open(urlStr: String) {
-    UIApplication.open(urlStr: urlStr)
+  /// 打开链接
+  ///
+  /// - Parameter string: url字符串
+  public class func open(string: String) {
+    guard let str = string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else{ return }
+    guard let url = URL(string: str) else { return }
+    open(url: url)
   }
 }
 
@@ -32,5 +39,4 @@ extension UIApplication {
     UILabel.swizzling()
     return super.next
   }
-
 }
