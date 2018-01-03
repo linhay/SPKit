@@ -22,7 +22,7 @@ pod 'SPKit'
 
 ## Author
 
-158179948@qq.com, 158179948@qq.com
+linger,linhan.bigl055@outlook.com
 
 ## License
 
