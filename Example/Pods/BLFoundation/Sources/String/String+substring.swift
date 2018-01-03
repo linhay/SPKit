@@ -14,8 +14,8 @@ extension String {
   /// - Parameter str: 指定字符串
   /// - Returns: 索引
   func index(first str: String) -> String.Index? {
-    guard let char = str.characters.first else { return nil }
-    return self.index(of: char)
+    let range = self.range(of: str)
+    return range?.lowerBound
   }
 
   /// 获取指定字符串最后一个字符在母串中的索引
@@ -23,8 +23,8 @@ extension String {
   /// - Parameter str: 指定字符串
   /// - Returns: 索引
   func index(last str: String) -> String.Index? {
-    guard let char = str.characters.last else { return nil }
-    return self.index(of: char)
+    let range = self.range(of: str)
+    return range?.upperBound
   }
 }
 
@@ -35,7 +35,7 @@ public extension String {
   /// - Parameter index: 指定位置
   subscript(index: Int) -> String {
     if index < 0 || index >= count { return "" }
-    let index = characters.index(startIndex, offsetBy: index)
+    let index = self.index(startIndex, offsetBy: String.IndexDistance(index))
     return String(self[index])
   }
 
@@ -51,7 +51,7 @@ public extension String {
     if range.start == range.end { return "" }
     let start = index(startIndex, offsetBy: range.start)
     let end = index(startIndex, offsetBy: range.end)
-    return String(self[start...end])
+    return String(self[start..<end])
   }
 
   /// 截取: 区间内的子串
@@ -88,8 +88,7 @@ public extension String {
   /// - Returns: 子串
   func substring(after str: String) -> String {
     guard let index = self.index(last: str) else { return "" }
-    var str = String(self[index...])
-    str.removeFirst()
+    let str = String(self[index...])
     return str
   }
 }
