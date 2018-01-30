@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9F9B28B06AF7540D5E92660D /* Pods_SPKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A243F5BC56568AF35838AE /* Pods_SPKit_Example.framework */; };
+		CD0D1AA5202077F800B970D5 /* trunk.sh in Resources */ = {isa = PBXBuildFile; fileRef = CD0D1AA4202077F800B970D5 /* trunk.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9818699725939906F8D4A98A /* Pods_SPKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A311A2F19D7B39DF6E02A5D7 /* Pods-SPKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Example/Pods-SPKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B596306611761C0AA917C770 /* Pods-SPKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Example/Pods-SPKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CD0D1AA4202077F800B970D5 /* trunk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = trunk.sh; path = ../trunk.sh; sourceTree = "<group>"; };
 		D1A243F5BC56568AF35838AE /* Pods_SPKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9232ED13991CBCEBA2FEC6E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				CD0D1AA4202077F800B970D5 /* trunk.sh */,
 				3BD5607462E3D018B48DD77F /* SPKit.podspec */,
 				D9232ED13991CBCEBA2FEC6E /* README.md */,
 				5A498BA803298F886FCF1A15 /* LICENSE */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				CD0D1AA5202077F800B970D5 /* trunk.sh in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
