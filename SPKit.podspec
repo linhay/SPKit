@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPKit'
-s.version          = '0.1.4'
+s.version          = '0.1.5'
 s.summary          = '基于 BlFoundation 对 UIKit 的一些扩展'
 
 
