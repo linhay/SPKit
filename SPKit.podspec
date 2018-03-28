@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 s.name             = 'SPKit'
-s.version          = '0.1.5'
+s.version          = '0.2.0'
 s.summary          = '基于 BlFoundation 对 UIKit 的一些扩展'
 
 
-s.homepage         = 'https://github.com/bigL055/SPKit.git'
+s.homepage         = 'https://github.com/linhay/SPKit.git'
 s.license          = { :type => 'Apache License 2.0', :file => 'LICENSE' }
 s.author           = { 'lin' => 'linhan.bigl055@outlook.com' }
-s.source = { :git => 'https://github.com/bigL055/SPKit.git', :tag => s.version.to_s }
+s.source = { :git => 'https://github.com/linhay/SPKit.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '8.0'
 
