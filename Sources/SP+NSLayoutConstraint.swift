@@ -19,7 +19,7 @@ public extension BLExtension where Base: NSLayoutConstraint {
   ///
   /// - Parameter multiplier: 新倍率
   /// - Returns: Constraint
-  func change(multiplier: CGFloat) -> NSLayoutConstraint {
+ public func change(multiplier: CGFloat) -> NSLayoutConstraint {
     NSLayoutConstraint.deactivate([base])
 
     let newConstraint = NSLayoutConstraint(
