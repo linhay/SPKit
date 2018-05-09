@@ -13,7 +13,6 @@
 		1990277E1CCC1772D8834613E370F79B /* SPKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D5B4793D0F9B0262A0068FE684E8B1 /* SPKit-dummy.m */; };
 		1AEF30DAD8BE937ACD9CC412A5271677 /* String+operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B02224E67A029C0710E2E9EC38680DE /* String+operator.swift */; };
 		1D56D720772BF272DAC12EE5782AD001 /* SP+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE31B2AAACAB2A76D956214B9B5E8BFF /* SP+Extension.swift */; };
-		3433A6CFB4E2DF748565C7B5B0021CA5 /* SP+NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297D5B666E91327CFC57A0453C1071E7 /* SP+NavigationController.swift */; };
 		39AAE58B51EB5D7F627C4699A020426F /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B48A40FD72723B6C3450DC68627A3E /* CharacterSet.swift */; };
 		3BBD9549666D19055474B3DD9EFAF974 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24DCCC5908BFD286D9B5241B115645 /* Array.swift */; };
 		40CA77C4596F06B107468AACEBEFABDA /* String+substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E04DF415347605653B8AE14233DB71 /* String+substring.swift */; };
@@ -21,7 +20,6 @@
 		462E24EED648184BB1DF8BA0CEAF33AE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBF878484139125221474D14C041BF7 /* Data.swift */; };
 		4A23D9A01B9E2E044CC1B5A1CD09D210 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A3B815519E2D8BC72839EEF1B1EA42 /* Foundation.framework */; };
 		4E625621C84FC89D09511A6CCE46F654 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F16A98CCADDE6C6EBF0AF6DE77DFCE /* Double.swift */; };
-		4F49DD4F87F399121A325392227B428A /* SP+Swizzling.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE3BFC7522D4EDA3D35360684635CA5 /* SP+Swizzling.swift */; };
 		5885AD110119119F9C3C663927689940 /* Date+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6F2B38AEFB3D244CA6A864BFEAC17 /* Date+Timepiece.swift */; };
 		5F639D595C4A80FCFE14939CD30DFCF8 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95B7C00484E94DDA40C7424E22BCFA8 /* String+MD5.swift */; };
 		601D59044993F0D9329D1502FC62A2D4 /* Regex+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE86A2CE6A2B80230A3D9ACB084111B1 /* Regex+Extension.swift */; };
@@ -98,7 +96,6 @@
 		266E28F7A7E887489372668EE24F437C /* BLFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BLFoundation-dummy.m"; sourceTree = "<group>"; };
 		26FBC2516BE1F1DEA25371F9F353C7DF /* SPKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPKit-prefix.pch"; sourceTree = "<group>"; };
 		28A14E6C85DAA5F243D78504946406A0 /* SP+UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+UILabel.swift"; path = "Sources/SP+UILabel.swift"; sourceTree = "<group>"; };
-		297D5B666E91327CFC57A0453C1071E7 /* SP+NavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+NavigationController.swift"; path = "Sources/SP+NavigationController.swift"; sourceTree = "<group>"; };
 		32654F7AD873ECE79D97842CD34F6410 /* RunTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RunTime.swift; path = Sources/Tools/RunTime.swift; sourceTree = "<group>"; };
 		383526061DE9CB8EDF197100712A8E62 /* Character.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Character.swift; path = Sources/String/Character.swift; sourceTree = "<group>"; };
 		3B02224E67A029C0710E2E9EC38680DE /* String+operator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+operator.swift"; path = "Sources/String/String+operator.swift"; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 		B0D5B4793D0F9B0262A0068FE684E8B1 /* SPKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPKit-dummy.m"; sourceTree = "<group>"; };
 		B3D08C7BCA4BEBECDB89261E70D2B127 /* BLFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = BLFoundation.modulemap; sourceTree = "<group>"; };
 		B9B4F1F75410BC99EF162E9E404BED1A /* Dictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dictionary.swift; path = Sources/Data/Dictionary.swift; sourceTree = "<group>"; };
-		BCE3BFC7522D4EDA3D35360684635CA5 /* SP+Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SP+Swizzling.swift"; path = "Sources/SP+Swizzling.swift"; sourceTree = "<group>"; };
 		C145BB9A5A3210D9909F66494C09C74D /* String+match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+match.swift"; path = "Sources/String/String+match.swift"; sourceTree = "<group>"; };
 		C2BC058D5CE6C44D8BB81B5F95C00663 /* Pods-SPKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SPKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C4B48A40FD72723B6C3450DC68627A3E /* CharacterSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CharacterSet.swift; path = Sources/String/CharacterSet.swift; sourceTree = "<group>"; };
@@ -333,9 +329,7 @@
 				43706A574174E4655CB5534147352CA2 /* SP+CALayer.swift */,
 				9A1DA8EC089B1202B5B27F404A55CE10 /* SP+CGRect.swift */,
 				EE31B2AAACAB2A76D956214B9B5E8BFF /* SP+Extension.swift */,
-				297D5B666E91327CFC57A0453C1071E7 /* SP+NavigationController.swift */,
 				0ECAD3AA7E9A321FDA4E0F1B05ED158C /* SP+NSLayoutConstraint.swift */,
-				BCE3BFC7522D4EDA3D35360684635CA5 /* SP+Swizzling.swift */,
 				952B759AC81F2D7E955B7D681A2E20C5 /* SP+UIApplication.swift */,
 				E97878BEF3954D1D990D4BFE6338F308 /* SP+UIBarButtonItem.swift */,
 				8AB35506624B375D784D25F73D56827B /* SP+UIButton.swift */,
@@ -492,7 +486,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -521,9 +515,7 @@
 				EE3597A05A4AFEB5B373B4B921820B29 /* SP+CALayer.swift in Sources */,
 				E02881D02CF9D5F4665CE686D726B119 /* SP+CGRect.swift in Sources */,
 				1D56D720772BF272DAC12EE5782AD001 /* SP+Extension.swift in Sources */,
-				3433A6CFB4E2DF748565C7B5B0021CA5 /* SP+NavigationController.swift in Sources */,
 				AC3BCED1D81D36B16470AA304E537D68 /* SP+NSLayoutConstraint.swift in Sources */,
-				4F49DD4F87F399121A325392227B428A /* SP+Swizzling.swift in Sources */,
 				C233FE801C1721D2754E55553B3C7797 /* SP+UIApplication.swift in Sources */,
 				9A1A320087BE97A8CD4B0147E2186DDD /* SP+UIBarButtonItem.swift in Sources */,
 				D0787AD72572333AAF34A9CE1C0FBA24 /* SP+UIButton.swift in Sources */,
@@ -647,6 +639,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -654,6 +647,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -807,6 +801,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -814,6 +809,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
