@@ -10,7 +10,7 @@ PODS:
   - BLFoundation/Number (0.4.1)
   - BLFoundation/String (0.4.1)
   - BLFoundation/Tools (0.4.1)
-  - SPKit (0.2.2):
+  - SPKit (0.2.5):
     - BLFoundation
 
 DEPENDENCIES:
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BLFoundation: eb5231c056f988a555a902ac74e899a55a0d751d
-  SPKit: f3caac0906f3e69daa93748d677bfd8822fc2928
+  SPKit: 8aa29fbfc96f9a34c1078a419c32b12ad5125436
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 

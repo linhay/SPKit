@@ -6,37 +6,38 @@
 //
 
 import UIKit
-
-public extension BLExtension where Base: NSLayoutConstraint {
+public extension NSLayoutConstraint {
+  
   /// 改变Constant 增加或者减少
   /// - Parameter offSet: 变化量
-  public func change(constant: CGFloat) {
-    let nowConstant = base.constant
-    base.constant = nowConstant + constant
+  public func change(offest: CGFloat) {
+    let nowConstant = self.constant
+    self.constant = nowConstant + offest
   }
-
+  
   /// 修改倍率
   ///
   /// - Parameter multiplier: 新倍率
   /// - Returns: Constraint
- public func change(multiplier: CGFloat) -> NSLayoutConstraint {
-    NSLayoutConstraint.deactivate([base])
-
+  public func change(multiplier: CGFloat) -> NSLayoutConstraint {
+    NSLayoutConstraint.deactivate([self])
+    
     let newConstraint = NSLayoutConstraint(
-      item: base.firstItem as Any,
-      attribute: base.firstAttribute,
-      relatedBy: base.relation,
-      toItem: base.secondItem,
-      attribute: base.secondAttribute,
+      item: self.firstItem as Any,
+      attribute: self.firstAttribute,
+      relatedBy: self.relation,
+      toItem: self.secondItem,
+      attribute: self.secondAttribute,
       multiplier: multiplier,
-      constant: base.constant)
-
-    newConstraint.priority = base.priority
-    newConstraint.shouldBeArchived = base.shouldBeArchived
-    newConstraint.identifier = base.identifier
-
+      constant: self.constant)
+    
+    newConstraint.priority = self.priority
+    newConstraint.shouldBeArchived = self.shouldBeArchived
+    newConstraint.identifier = self.identifier
+    
     NSLayoutConstraint.activate([newConstraint])
     return newConstraint
   }
-
+  
 }
+

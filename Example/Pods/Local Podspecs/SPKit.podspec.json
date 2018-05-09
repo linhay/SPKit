@@ -1,6 +1,6 @@
 {
   "name": "SPKit",
-  "version": "0.2.2",
+  "version": "0.2.5",
   "summary": "基于 BlFoundation 对 UIKit 的一些扩展",
   "homepage": "https://github.com/linhay/SPKit.git",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/linhay/SPKit.git",
-    "tag": "0.2.2"
+    "tag": "0.2.5"
   },
   "platforms": {
     "ios": "8.0"
