@@ -28,7 +28,7 @@ public extension UIControl {
 extension UIControl {
   private static var once: Bool = false
   
-  class func begin() {
+  public class func begin() {
     if once == false {
       once = true
       RunTime.exchangeMethod(selector: #selector(UIControl.sendAction(_:to:for:)),
