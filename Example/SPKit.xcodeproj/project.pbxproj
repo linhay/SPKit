@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		047E6786A5A0E424739AF629 /* Pods-SPKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Tests/Pods-SPKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1BD221B1CB759EECDC519F3A /* Pods-SPKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Tests/Pods-SPKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3BD5607462E3D018B48DD77F /* SPKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPKit.podspec; path = ../SPKit.podspec; sourceTree = "<group>"; };
+		3BD5607462E3D018B48DD77F /* SPKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SPKit.podspec; path = ../SPKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5A498BA803298F886FCF1A15 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SPKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };

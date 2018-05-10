@@ -18,8 +18,8 @@ public extension BLExtension where Base: UILabel {
 
 // MARK: - runtime and swizzling
 extension UILabel {
-  private static var once: Bool = false
-  private class func begin() {
+  fileprivate static var once: Bool = false
+  fileprivate class func swizzig() {
     if once == false {
       once = true
       RunTime.exchangeMethod(selector: #selector(UILabel.drawText(in:)),
@@ -28,7 +28,7 @@ extension UILabel {
     }
   }
   
-  private struct SwzzlingKeys {
+  fileprivate struct SwzzlingKeys {
     static var textInset = UnsafeRawPointer(bitPattern: "label_textInset".hashValue)
   }
 }
@@ -45,6 +45,7 @@ extension UILabel {
       return UIEdgeInsets.zero
     }
     set {
+      UILabel.swizzig()
       objc_setAssociatedObject(self,
                                UILabel.SwzzlingKeys.textInset!,
                                newValue as UIEdgeInsets,
@@ -53,7 +54,7 @@ extension UILabel {
     }
   }
   
-  @objc private func sp_drawText(in rect: CGRect) {
+  @objc fileprivate func sp_drawText(in rect: CGRect) {
     let rect = CGRect(x: bounds.origin.x + textInset.left,
                       y: bounds.origin.y + textInset.top,
                       width: bounds.size.width - textInset.left - textInset.right,

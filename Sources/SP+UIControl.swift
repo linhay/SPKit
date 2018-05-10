@@ -26,9 +26,9 @@ public extension UIControl {
 
 // MARK: - runtime keys
 extension UIControl {
-  private static var once: Bool = false
+  fileprivate static var once: Bool = false
   
-  public class func begin() {
+  fileprivate class func swizzing() {
     if once == false {
       once = true
       RunTime.exchangeMethod(selector: #selector(UIControl.sendAction(_:to:for:)),
@@ -37,7 +37,7 @@ extension UIControl {
     }
   }
   
-  private struct ActionKey {
+  fileprivate struct ActionKey {
     static var action = UnsafeRawPointer(bitPattern: "uicontrol_action_block".hashValue)
     static var time = UnsafeRawPointer(bitPattern: "uicontrol_event_time".hashValue)
     static var interval = UnsafeRawPointer(bitPattern: "uicontrol_event_interval".hashValue)
@@ -48,7 +48,7 @@ extension UIControl {
 extension UIControl {
   
   /// 系统响应事件
-  private var systemActions: [String] {
+  fileprivate var systemActions: [String] {
     return ["_handleShutterButtonReleased:",
             "cameraShutterPressed:",
             "_tappedBottomBarCancelButton:",
@@ -67,6 +67,7 @@ extension UIControl {
       return 0
     }
     set {
+      UIControl.swizzing()
       objc_setAssociatedObject(self,
                                UIControl.ActionKey.interval!,
                                newValue as TimeInterval,
@@ -75,7 +76,7 @@ extension UIControl {
   }
   
   /// 上次事件响应时间
-  private var lastEventTime: TimeInterval {
+  fileprivate var lastEventTime: TimeInterval {
     get {
       if let eventTime = objc_getAssociatedObject(self, UIControl.ActionKey.time!) as? TimeInterval {
         return eventTime
@@ -83,6 +84,7 @@ extension UIControl {
       return 1.0
     }
     set {
+      UIControl.swizzing()
       objc_setAssociatedObject(self,
                                UIControl.ActionKey.time!,
                                newValue as TimeInterval,
@@ -90,7 +92,7 @@ extension UIControl {
     }
   }
   
-  @objc private func sp_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+  @objc fileprivate func sp_sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
     if systemActions.contains(action.description) || eventInterval <= 0 {
       self.sp_sendAction(action: action, to: target, forEvent: event)
       return
@@ -107,12 +109,12 @@ extension UIControl {
 // MARK: - target
 extension UIControl {
   
-  private struct ActionBlock {
+  fileprivate struct ActionBlock {
     var key: UInt
     var action: ()->()
   }
   
-  private var actionBlocks: [ActionBlock] {
+  fileprivate var actionBlocks: [ActionBlock] {
     get { return objc_getAssociatedObject(self,UIControl.ActionKey.action!) as? [ActionBlock] ?? [] }
     set { objc_setAssociatedObject(self,
                                    UIControl.ActionKey.action!,
@@ -121,7 +123,7 @@ extension UIControl {
     }
   }
   
-  private func triggerAction(for: UIControl, event: UIControlEvents){
+  fileprivate func triggerAction(for: UIControl, event: UIControlEvents){
     let action = actionBlocks.filter { (item) -> Bool
       in return item.key == event.rawValue
       }.first
@@ -129,7 +131,7 @@ extension UIControl {
     act.action()
   }
   
-  private func selector(event: UIControlEvents) -> Selector? {
+  fileprivate func selector(event: UIControlEvents) -> Selector? {
     var selector: Selector?
     switch event.rawValue {
     // Touch events
@@ -162,66 +164,66 @@ extension UIControl {
     return selector
   }
   
-  @objc private func touchDown(sender: UIControl) {
+  @objc fileprivate func touchDown(sender: UIControl) {
     triggerAction(for: sender, event: .touchDown)
   }
-  @objc private func touchDownRepeat(sender: UIControl) {
+  @objc fileprivate func touchDownRepeat(sender: UIControl) {
     triggerAction(for:sender, event: .touchDownRepeat)
   }
-  @objc private func touchDragInside(sender: UIControl) {
+  @objc fileprivate func touchDragInside(sender: UIControl) {
     triggerAction(for:sender, event: .touchDragInside)
   }
-  @objc private func touchDragOutside(sender: UIControl) {
+  @objc fileprivate func touchDragOutside(sender: UIControl) {
     triggerAction(for:sender, event: .touchDragOutside)
   }
-  @objc private func touchDragEnter(sender: UIControl) {
+  @objc fileprivate func touchDragEnter(sender: UIControl) {
     triggerAction(for:sender, event: .touchDragEnter)
   }
-  @objc private func touchDragExit(sender: UIControl) {
+  @objc fileprivate func touchDragExit(sender: UIControl) {
     triggerAction(for:sender, event: .touchDragExit)
   }
-  @objc private func touchUpInside(sender: UIControl) {
+  @objc fileprivate func touchUpInside(sender: UIControl) {
     triggerAction(for:sender, event: .touchUpInside)
   }
-  @objc private func touchUpOutside(sender: UIControl) {
+  @objc fileprivate func touchUpOutside(sender: UIControl) {
     triggerAction(for:sender, event: .touchUpOutside)
   }
-  @objc private func touchCancel(sender: UIControl) {
+  @objc fileprivate func touchCancel(sender: UIControl) {
     triggerAction(for:sender, event: .touchCancel)
   }
-  @objc private func valueChanged(sender: UIControl) {
+  @objc fileprivate func valueChanged(sender: UIControl) {
     triggerAction(for:sender, event: .valueChanged)
   }
-  @objc private func primaryActionTriggered(sender: UIControl) {
+  @objc fileprivate func primaryActionTriggered(sender: UIControl) {
     if #available(iOS 9.0, *) {
       triggerAction(for:sender, event: .primaryActionTriggered)
     }
   }
-  @objc private func editingDidBegin(sender: UIControl) {
+  @objc fileprivate func editingDidBegin(sender: UIControl) {
     triggerAction(for:sender, event: .editingDidBegin)
   }
-  @objc private func editingChanged(sender: UIControl) {
+  @objc fileprivate func editingChanged(sender: UIControl) {
     triggerAction(for:sender, event: .editingChanged)
   }
-  @objc private func editingDidEnd(sender: UIControl) {
+  @objc fileprivate func editingDidEnd(sender: UIControl) {
     triggerAction(for:sender, event: .editingDidEnd)
   }
-  @objc private func editingDidEndOnExit(sender: UIControl) {
+  @objc fileprivate func editingDidEndOnExit(sender: UIControl) {
     triggerAction(for:sender, event: .editingDidEndOnExit)
   }
-  @objc private func allTouchEvents(sender: UIControl) {
+  @objc fileprivate func allTouchEvents(sender: UIControl) {
     triggerAction(for:sender, event: .allTouchEvents)
   }
-  @objc private func allEditingEvents(sender: UIControl) {
+  @objc fileprivate func allEditingEvents(sender: UIControl) {
     triggerAction(for:sender, event: .allEditingEvents)
   }
-  @objc private func applicationReserved(sender: UIControl) {
+  @objc fileprivate func applicationReserved(sender: UIControl) {
     triggerAction(for:sender, event: .applicationReserved)
   }
-  @objc private func systemReserved(sender: UIControl) {
+  @objc fileprivate func systemReserved(sender: UIControl) {
     triggerAction(for:sender, event: .systemReserved)
   }
-  @objc private func allEvents(sender: UIControl) {
+  @objc fileprivate func allEvents(sender: UIControl) {
     triggerAction(for:sender, event: .allEvents)
   }
   
