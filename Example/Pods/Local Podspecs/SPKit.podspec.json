@@ -31,48 +31,27 @@
     },
     {
       "name": "CALayer",
-      "source_files": "Sources/CALayer/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/CALayer/**"
+    },
+    {
+      "name": "CGRect",
+      "source_files": "Sources/CGRect/**"
     },
     {
       "name": "NSLayoutConstraint",
-      "source_files": "Sources/NSLayoutConstraint/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/NSLayoutConstraint/**"
     },
     {
       "name": "UIApplication",
-      "source_files": "Sources/UIApplication/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UIApplication/**"
     },
     {
       "name": "UIBarButtonItem",
-      "source_files": "Sources/UIBarButtonItem/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UIBarButtonItem/**"
     },
     {
       "name": "UIButton",
-      "source_files": "Sources/UIButton/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UIButton/**"
     },
     {
       "name": "UICell",
@@ -85,20 +64,12 @@
     },
     {
       "name": "UIColor",
-      "source_files": "Sources/UIColor/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UIColor/**"
     },
     {
       "name": "UIControl",
       "source_files": "Sources/UIControl/**",
       "dependencies": {
-        "SPKit/Core": [
-
-        ],
         "BLFoundation": [
 
         ]
@@ -127,21 +98,11 @@
     },
     {
       "name": "UIStoryboard",
-      "source_files": "Sources/UIStoryboard/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UIStoryboard/**"
     },
     {
       "name": "UITextField",
-      "source_files": "Sources/UITextField/**",
-      "dependencies": {
-        "SPKit/Core": [
-
-        ]
-      }
+      "source_files": "Sources/UITextField/**"
     },
     {
       "name": "UIView",

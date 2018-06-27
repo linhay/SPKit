@@ -14,6 +14,7 @@ PODS:
   - BLFoundation/URL (0.5.4)
   - SPKit (0.3.0):
     - SPKit/CALayer (= 0.3.0)
+    - SPKit/CGRect (= 0.3.0)
     - SPKit/Core (= 0.3.0)
     - SPKit/NSLayoutConstraint (= 0.3.0)
     - SPKit/UIApplication (= 0.3.0)
@@ -28,33 +29,25 @@ PODS:
     - SPKit/UITextField (= 0.3.0)
     - SPKit/UIView (= 0.3.0)
     - SPKit/UIViewController (= 0.3.0)
-  - SPKit/CALayer (0.3.0):
-    - SPKit/Core
+  - SPKit/CALayer (0.3.0)
+  - SPKit/CGRect (0.3.0)
   - SPKit/Core (0.3.0)
-  - SPKit/NSLayoutConstraint (0.3.0):
-    - SPKit/Core
-  - SPKit/UIApplication (0.3.0):
-    - SPKit/Core
-  - SPKit/UIBarButtonItem (0.3.0):
-    - SPKit/Core
-  - SPKit/UIButton (0.3.0):
-    - SPKit/Core
+  - SPKit/NSLayoutConstraint (0.3.0)
+  - SPKit/UIApplication (0.3.0)
+  - SPKit/UIBarButtonItem (0.3.0)
+  - SPKit/UIButton (0.3.0)
   - SPKit/UICell (0.3.0):
     - SPKit/Core
-  - SPKit/UIColor (0.3.0):
-    - SPKit/Core
+  - SPKit/UIColor (0.3.0)
   - SPKit/UIControl (0.3.0):
     - BLFoundation
-    - SPKit/Core
   - SPKit/UIImage (0.3.0):
     - SPKit/Core
   - SPKit/UILabel (0.3.0):
     - BLFoundation
     - SPKit/Core
-  - SPKit/UIStoryboard (0.3.0):
-    - SPKit/Core
-  - SPKit/UITextField (0.3.0):
-    - SPKit/Core
+  - SPKit/UIStoryboard (0.3.0)
+  - SPKit/UITextField (0.3.0)
   - SPKit/UIView (0.3.0):
     - SPKit/Core
   - SPKit/UIViewController (0.3.0):
@@ -73,7 +66,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BLFoundation: 2927b21d9788138d428a8660e1d1c4fedef18635
-  SPKit: 53d55d1a2dcb1d3391095a334e8af3190cb8b5e3
+  SPKit: cd0f4df9b70f57202ac4d2bc063b93f8b2e91470
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
