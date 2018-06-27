@@ -1,6 +1,6 @@
 {
   "name": "SPKit",
-  "version": "0.2.5",
+  "version": "0.2.8",
   "summary": "基于 BlFoundation 对 UIKit 的一些扩展",
   "homepage": "https://github.com/linhay/SPKit.git",
   "license": {
@@ -12,29 +12,154 @@
   },
   "source": {
     "git": "https://github.com/linhay/SPKit.git",
-    "tag": "0.2.5"
+    "tag": "0.2.8"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": [
-    "Sources/*/**",
-    "Sources/*/*/**",
-    "Sources/**"
-  ],
-  "public_header_files": [
-    "Sources/SPKit.h"
-  ],
   "frameworks": [
     "UIKit"
   ],
   "requires_arc": true,
-  "dependencies": {
-    "BLFoundation": [
-
-    ]
-  },
   "pod_target_xcconfig": {
     "SWIFT_VERSION": "4.0"
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Sources/Core/**"
+    },
+    {
+      "name": "CALayer",
+      "source_files": "Sources/CALayer/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "NSLayoutConstraint",
+      "source_files": "Sources/NSLayoutConstraint/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIApplication",
+      "source_files": "Sources/UIApplication/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIBarButtonItem",
+      "source_files": "Sources/UIBarButtonItem/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIButton",
+      "source_files": "Sources/UIButton/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UICell",
+      "source_files": "Sources/UICell/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIColor",
+      "source_files": "Sources/UIColor/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIControl",
+      "source_files": "Sources/UIControl/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ],
+        "BLFoundation": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIImage",
+      "source_files": "Sources/UIImage/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UILabel",
+      "source_files": "Sources/UILabel/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ],
+        "BLFoundation": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIStoryboard",
+      "source_files": "Sources/UIStoryboard/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UITextField",
+      "source_files": "Sources/UITextField/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIView",
+      "source_files": "Sources/UIView/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UIViewController",
+      "source_files": "Sources/UIViewController/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    }
+  ]
 }

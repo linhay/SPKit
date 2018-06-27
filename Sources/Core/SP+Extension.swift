@@ -32,11 +32,5 @@ extension UIView: ExtensionCompatible { }
 extension UIViewController: ExtensionCompatible { }
 
 
-public extension NSCoder{
 
-  public func decodeString(forKey key: String) -> String{
-    return decodeObject(forKey: key) as? String ?? ""
-  }
-  
-}
 

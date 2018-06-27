@@ -1,23 +1,70 @@
 PODS:
-  - BLFoundation (0.4.1):
-    - BLFoundation/Data (= 0.4.1)
-    - BLFoundation/Date (= 0.4.1)
-    - BLFoundation/Number (= 0.4.1)
-    - BLFoundation/String (= 0.4.1)
-    - BLFoundation/Tools (= 0.4.1)
-  - BLFoundation/Data (0.4.1)
-  - BLFoundation/Date (0.4.1)
-  - BLFoundation/Number (0.4.1)
-  - BLFoundation/String (0.4.1)
-  - BLFoundation/Tools (0.4.1)
-  - SPKit (0.2.5):
+  - BLFoundation (0.5.4):
+    - BLFoundation/Data (= 0.5.4)
+    - BLFoundation/Date (= 0.5.4)
+    - BLFoundation/Number (= 0.5.4)
+    - BLFoundation/String (= 0.5.4)
+    - BLFoundation/Tools (= 0.5.4)
+    - BLFoundation/URL (= 0.5.4)
+  - BLFoundation/Data (0.5.4)
+  - BLFoundation/Date (0.5.4)
+  - BLFoundation/Number (0.5.4)
+  - BLFoundation/String (0.5.4)
+  - BLFoundation/Tools (0.5.4)
+  - BLFoundation/URL (0.5.4)
+  - SPKit (0.2.8):
+    - SPKit/CALayer (= 0.2.8)
+    - SPKit/Core (= 0.2.8)
+    - SPKit/NSLayoutConstraint (= 0.2.8)
+    - SPKit/UIApplication (= 0.2.8)
+    - SPKit/UIBarButtonItem (= 0.2.8)
+    - SPKit/UIButton (= 0.2.8)
+    - SPKit/UICell (= 0.2.8)
+    - SPKit/UIColor (= 0.2.8)
+    - SPKit/UIControl (= 0.2.8)
+    - SPKit/UIImage (= 0.2.8)
+    - SPKit/UILabel (= 0.2.8)
+    - SPKit/UIStoryboard (= 0.2.8)
+    - SPKit/UITextField (= 0.2.8)
+    - SPKit/UIView (= 0.2.8)
+    - SPKit/UIViewController (= 0.2.8)
+  - SPKit/CALayer (0.2.8):
+    - SPKit/Core
+  - SPKit/Core (0.2.8)
+  - SPKit/NSLayoutConstraint (0.2.8):
+    - SPKit/Core
+  - SPKit/UIApplication (0.2.8):
+    - SPKit/Core
+  - SPKit/UIBarButtonItem (0.2.8):
+    - SPKit/Core
+  - SPKit/UIButton (0.2.8):
+    - SPKit/Core
+  - SPKit/UICell (0.2.8):
+    - SPKit/Core
+  - SPKit/UIColor (0.2.8):
+    - SPKit/Core
+  - SPKit/UIControl (0.2.8):
     - BLFoundation
+    - SPKit/Core
+  - SPKit/UIImage (0.2.8):
+    - SPKit/Core
+  - SPKit/UILabel (0.2.8):
+    - BLFoundation
+    - SPKit/Core
+  - SPKit/UIStoryboard (0.2.8):
+    - SPKit/Core
+  - SPKit/UITextField (0.2.8):
+    - SPKit/Core
+  - SPKit/UIView (0.2.8):
+    - SPKit/Core
+  - SPKit/UIViewController (0.2.8):
+    - SPKit/Core
 
 DEPENDENCIES:
   - SPKit (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - BLFoundation
 
 EXTERNAL SOURCES:
@@ -25,9 +72,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BLFoundation: eb5231c056f988a555a902ac74e899a55a0d751d
-  SPKit: 8aa29fbfc96f9a34c1078a419c32b12ad5125436
+  BLFoundation: 2927b21d9788138d428a8660e1d1c4fedef18635
+  SPKit: 9efc38bbc23b552fde1acf760ed247465b71d734
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
