@@ -12,52 +12,52 @@ PODS:
   - BLFoundation/String (0.5.4)
   - BLFoundation/Tools (0.5.4)
   - BLFoundation/URL (0.5.4)
-  - SPKit (0.2.8):
-    - SPKit/CALayer (= 0.2.8)
-    - SPKit/Core (= 0.2.8)
-    - SPKit/NSLayoutConstraint (= 0.2.8)
-    - SPKit/UIApplication (= 0.2.8)
-    - SPKit/UIBarButtonItem (= 0.2.8)
-    - SPKit/UIButton (= 0.2.8)
-    - SPKit/UICell (= 0.2.8)
-    - SPKit/UIColor (= 0.2.8)
-    - SPKit/UIControl (= 0.2.8)
-    - SPKit/UIImage (= 0.2.8)
-    - SPKit/UILabel (= 0.2.8)
-    - SPKit/UIStoryboard (= 0.2.8)
-    - SPKit/UITextField (= 0.2.8)
-    - SPKit/UIView (= 0.2.8)
-    - SPKit/UIViewController (= 0.2.8)
-  - SPKit/CALayer (0.2.8):
+  - SPKit (0.3.0):
+    - SPKit/CALayer (= 0.3.0)
+    - SPKit/Core (= 0.3.0)
+    - SPKit/NSLayoutConstraint (= 0.3.0)
+    - SPKit/UIApplication (= 0.3.0)
+    - SPKit/UIBarButtonItem (= 0.3.0)
+    - SPKit/UIButton (= 0.3.0)
+    - SPKit/UICell (= 0.3.0)
+    - SPKit/UIColor (= 0.3.0)
+    - SPKit/UIControl (= 0.3.0)
+    - SPKit/UIImage (= 0.3.0)
+    - SPKit/UILabel (= 0.3.0)
+    - SPKit/UIStoryboard (= 0.3.0)
+    - SPKit/UITextField (= 0.3.0)
+    - SPKit/UIView (= 0.3.0)
+    - SPKit/UIViewController (= 0.3.0)
+  - SPKit/CALayer (0.3.0):
     - SPKit/Core
-  - SPKit/Core (0.2.8)
-  - SPKit/NSLayoutConstraint (0.2.8):
+  - SPKit/Core (0.3.0)
+  - SPKit/NSLayoutConstraint (0.3.0):
     - SPKit/Core
-  - SPKit/UIApplication (0.2.8):
+  - SPKit/UIApplication (0.3.0):
     - SPKit/Core
-  - SPKit/UIBarButtonItem (0.2.8):
+  - SPKit/UIBarButtonItem (0.3.0):
     - SPKit/Core
-  - SPKit/UIButton (0.2.8):
+  - SPKit/UIButton (0.3.0):
     - SPKit/Core
-  - SPKit/UICell (0.2.8):
+  - SPKit/UICell (0.3.0):
     - SPKit/Core
-  - SPKit/UIColor (0.2.8):
+  - SPKit/UIColor (0.3.0):
     - SPKit/Core
-  - SPKit/UIControl (0.2.8):
+  - SPKit/UIControl (0.3.0):
     - BLFoundation
     - SPKit/Core
-  - SPKit/UIImage (0.2.8):
+  - SPKit/UIImage (0.3.0):
     - SPKit/Core
-  - SPKit/UILabel (0.2.8):
+  - SPKit/UILabel (0.3.0):
     - BLFoundation
     - SPKit/Core
-  - SPKit/UIStoryboard (0.2.8):
+  - SPKit/UIStoryboard (0.3.0):
     - SPKit/Core
-  - SPKit/UITextField (0.2.8):
+  - SPKit/UITextField (0.3.0):
     - SPKit/Core
-  - SPKit/UIView (0.2.8):
+  - SPKit/UIView (0.3.0):
     - SPKit/Core
-  - SPKit/UIViewController (0.2.8):
+  - SPKit/UIViewController (0.3.0):
     - SPKit/Core
 
 DEPENDENCIES:
@@ -73,7 +73,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   BLFoundation: 2927b21d9788138d428a8660e1d1c4fedef18635
-  SPKit: 9efc38bbc23b552fde1acf760ed247465b71d734
+  SPKit: 53d55d1a2dcb1d3391095a334e8af3190cb8b5e3
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
