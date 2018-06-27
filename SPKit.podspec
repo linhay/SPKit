@@ -22,27 +22,26 @@ end
 
 s.subspec 'CALayer' do |ss|
   ss.source_files = 'Sources/CALayer/**'
-  ss.dependency 'SPKit/Core'
+end
+
+s.subspec 'CGRect' do |ss|
+  ss.source_files = 'Sources/CGRect/**'
 end
 
 s.subspec 'NSLayoutConstraint' do |ss|
   ss.source_files = 'Sources/NSLayoutConstraint/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UIApplication' do |ss|
   ss.source_files = 'Sources/UIApplication/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UIBarButtonItem' do |ss|
   ss.source_files = 'Sources/UIBarButtonItem/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UIButton' do |ss|
   ss.source_files = 'Sources/UIButton/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UICell' do |ss|
@@ -52,12 +51,10 @@ end
 
 s.subspec 'UIColor' do |ss|
   ss.source_files = 'Sources/UIColor/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UIControl' do |ss|
   ss.source_files = 'Sources/UIControl/**'
-  ss.dependency 'SPKit/Core'
   ss.dependency 'BLFoundation'
 end
 
@@ -74,12 +71,10 @@ end
 
 s.subspec 'UIStoryboard' do |ss|
   ss.source_files = 'Sources/UIStoryboard/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UITextField' do |ss|
   ss.source_files = 'Sources/UITextField/**'
-  ss.dependency 'SPKit/Core'
 end
 
 s.subspec 'UIView' do |ss|
