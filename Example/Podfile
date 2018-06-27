@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'SPKit_Example' do
+  pod 'SPKit', :path => '../'
+    
+end
