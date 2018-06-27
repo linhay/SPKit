@@ -11,7 +11,7 @@ public extension BLExtension where Base: UIViewController {
   
   /// tabbarHeight高度
   public var tabbarHeight: CGFloat {
-    return base.tabBarController?.tabBar.height ?? 0
+    return base.tabBarController?.tabBar.bounds.height ?? 0
   }
   
   /// 能否回退
