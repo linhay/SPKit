@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'SPKit'
-s.version          = '0.3.1'
+s.version          = '0.3.2'
 s.summary          = 'A set of useful categories for Foundation and UIKit.'
 
 
@@ -16,6 +16,10 @@ s.requires_arc = true
 
 s.subspec 'Core' do |ss|
   ss.source_files = 'Sources/Core/**'
+end
+
+s.subspec 'Foundation' do |ss|
+  ss.source_files = 'Sources/Foundation/**'
 end
 
 s.subspec 'CALayer' do |ss|
@@ -53,7 +57,7 @@ end
 
 s.subspec 'UIControl' do |ss|
   ss.source_files = 'Sources/UIControl/**'
-  ss.dependency 'BLFoundation'
+  ss.dependency 'BLFoundation/Tools'
 end
 
 s.subspec 'UIImage' do |ss|
@@ -64,7 +68,7 @@ end
 s.subspec 'UILabel' do |ss|
   ss.source_files = 'Sources/UILabel/**'
   ss.dependency 'SPKit/Core'
-  ss.dependency 'BLFoundation'
+  ss.dependency 'BLFoundation/Tools'
 end
 
 s.subspec 'UIStoryboard' do |ss|

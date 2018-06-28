@@ -1,18 +1,18 @@
 {
   "name": "SPKit",
-  "version": "0.3.0",
-  "summary": "基于 BlFoundation 对 UIKit 的一些扩展",
+  "version": "0.3.2",
+  "summary": "A set of useful categories for Foundation and UIKit.",
   "homepage": "https://github.com/linhay/SPKit.git",
   "license": {
-    "type": "Apache License 2.0",
+    "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "lin": "linhan.bigl055@outlook.com"
+    "lin": "is.linhay@outlook.com"
   },
   "source": {
     "git": "https://github.com/linhay/SPKit.git",
-    "tag": "0.3.0"
+    "tag": "0.3.2"
   },
   "platforms": {
     "ios": "8.0"
@@ -28,6 +28,10 @@
     {
       "name": "Core",
       "source_files": "Sources/Core/**"
+    },
+    {
+      "name": "Foundation",
+      "source_files": "Sources/Foundation/**"
     },
     {
       "name": "CALayer",
@@ -70,7 +74,7 @@
       "name": "UIControl",
       "source_files": "Sources/UIControl/**",
       "dependencies": {
-        "BLFoundation": [
+        "BLFoundation/Tools": [
 
         ]
       }
@@ -91,7 +95,7 @@
         "SPKit/Core": [
 
         ],
-        "BLFoundation": [
+        "BLFoundation/Tools": [
 
         ]
       }

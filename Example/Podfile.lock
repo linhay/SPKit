@@ -1,56 +1,46 @@
 PODS:
-  - BLFoundation (0.5.4):
-    - BLFoundation/Data (= 0.5.4)
-    - BLFoundation/Date (= 0.5.4)
-    - BLFoundation/Number (= 0.5.4)
-    - BLFoundation/String (= 0.5.4)
-    - BLFoundation/Tools (= 0.5.4)
-    - BLFoundation/URL (= 0.5.4)
-  - BLFoundation/Data (0.5.4)
-  - BLFoundation/Date (0.5.4)
-  - BLFoundation/Number (0.5.4)
-  - BLFoundation/String (0.5.4)
-  - BLFoundation/Tools (0.5.4)
-  - BLFoundation/URL (0.5.4)
-  - SPKit (0.3.0):
-    - SPKit/CALayer (= 0.3.0)
-    - SPKit/CGRect (= 0.3.0)
-    - SPKit/Core (= 0.3.0)
-    - SPKit/NSLayoutConstraint (= 0.3.0)
-    - SPKit/UIApplication (= 0.3.0)
-    - SPKit/UIBarButtonItem (= 0.3.0)
-    - SPKit/UIButton (= 0.3.0)
-    - SPKit/UICell (= 0.3.0)
-    - SPKit/UIColor (= 0.3.0)
-    - SPKit/UIControl (= 0.3.0)
-    - SPKit/UIImage (= 0.3.0)
-    - SPKit/UILabel (= 0.3.0)
-    - SPKit/UIStoryboard (= 0.3.0)
-    - SPKit/UITextField (= 0.3.0)
-    - SPKit/UIView (= 0.3.0)
-    - SPKit/UIViewController (= 0.3.0)
-  - SPKit/CALayer (0.3.0)
-  - SPKit/CGRect (0.3.0)
-  - SPKit/Core (0.3.0)
-  - SPKit/NSLayoutConstraint (0.3.0)
-  - SPKit/UIApplication (0.3.0)
-  - SPKit/UIBarButtonItem (0.3.0)
-  - SPKit/UIButton (0.3.0)
-  - SPKit/UICell (0.3.0):
+  - BLFoundation/Tools (0.5.5)
+  - SPKit (0.3.2):
+    - SPKit/CALayer (= 0.3.2)
+    - SPKit/CGRect (= 0.3.2)
+    - SPKit/Core (= 0.3.2)
+    - SPKit/Foundation (= 0.3.2)
+    - SPKit/NSLayoutConstraint (= 0.3.2)
+    - SPKit/UIApplication (= 0.3.2)
+    - SPKit/UIBarButtonItem (= 0.3.2)
+    - SPKit/UIButton (= 0.3.2)
+    - SPKit/UICell (= 0.3.2)
+    - SPKit/UIColor (= 0.3.2)
+    - SPKit/UIControl (= 0.3.2)
+    - SPKit/UIImage (= 0.3.2)
+    - SPKit/UILabel (= 0.3.2)
+    - SPKit/UIStoryboard (= 0.3.2)
+    - SPKit/UITextField (= 0.3.2)
+    - SPKit/UIView (= 0.3.2)
+    - SPKit/UIViewController (= 0.3.2)
+  - SPKit/CALayer (0.3.2)
+  - SPKit/CGRect (0.3.2)
+  - SPKit/Core (0.3.2)
+  - SPKit/Foundation (0.3.2)
+  - SPKit/NSLayoutConstraint (0.3.2)
+  - SPKit/UIApplication (0.3.2)
+  - SPKit/UIBarButtonItem (0.3.2)
+  - SPKit/UIButton (0.3.2)
+  - SPKit/UICell (0.3.2):
     - SPKit/Core
-  - SPKit/UIColor (0.3.0)
-  - SPKit/UIControl (0.3.0):
-    - BLFoundation
-  - SPKit/UIImage (0.3.0):
+  - SPKit/UIColor (0.3.2)
+  - SPKit/UIControl (0.3.2):
+    - BLFoundation/Tools
+  - SPKit/UIImage (0.3.2):
     - SPKit/Core
-  - SPKit/UILabel (0.3.0):
-    - BLFoundation
+  - SPKit/UILabel (0.3.2):
+    - BLFoundation/Tools
     - SPKit/Core
-  - SPKit/UIStoryboard (0.3.0)
-  - SPKit/UITextField (0.3.0)
-  - SPKit/UIView (0.3.0):
+  - SPKit/UIStoryboard (0.3.2)
+  - SPKit/UITextField (0.3.2)
+  - SPKit/UIView (0.3.2):
     - SPKit/Core
-  - SPKit/UIViewController (0.3.0):
+  - SPKit/UIViewController (0.3.2):
     - SPKit/Core
 
 DEPENDENCIES:
@@ -65,8 +55,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BLFoundation: 2927b21d9788138d428a8660e1d1c4fedef18635
-  SPKit: cd0f4df9b70f57202ac4d2bc063b93f8b2e91470
+  BLFoundation: f6df2c1f6641c1a1d077521be07402d1af0c9958
+  SPKit: 3cabdfb15d44e855a80aac899b49b03b8cc24912
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
