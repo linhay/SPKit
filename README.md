@@ -24,7 +24,7 @@ pod "SPKit"
 
 ## Useage
 
-- [API Reference](./docs/index.html) - Lastly, please remember to read the full whenever you may need a more detailed reference.
+- [API Reference](https://linhay.github.io/SPKit/index.html) - Lastly, please remember to read the full whenever you may need a more detailed reference.
 
 ## Author
 
