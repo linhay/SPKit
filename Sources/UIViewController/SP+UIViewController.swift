@@ -22,7 +22,7 @@
 
 import UIKit
 
-public extension BLExtension where Base: UIViewController {
+public extension SPExtension where Base: UIViewController {
   
   /// tabbarHeight高度
   public var tabbarHeight: CGFloat {
@@ -36,7 +36,7 @@ public extension BLExtension where Base: UIViewController {
   
 }
 
-public extension BLExtension where Base: UIViewController {
+public extension SPExtension where Base: UIViewController {
   
   public var isByPresented: Bool {
     guard base.navigationController != nil else { return false }

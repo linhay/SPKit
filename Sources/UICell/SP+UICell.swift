@@ -40,7 +40,7 @@ public extension SPNibProtocol {
   }
 }
 
-public extension BLExtension where Base: UITableView{
+public extension SPExtension where Base: UITableView{
 
   public func register<T: UITableViewCell>(_ cell: T.Type) where T: SPCellProtocol {
     if let nib = T.nib {
@@ -67,7 +67,7 @@ public extension BLExtension where Base: UITableView{
   }
 }
 
-public extension BLExtension where Base: UICollectionView {
+public extension SPExtension where Base: UICollectionView {
 
   public func register<T: UICollectionViewCell>(_ cell: T.Type) where T: SPCellProtocol {
     if let nib = T.nib {

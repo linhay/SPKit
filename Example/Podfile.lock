@@ -1,5 +1,4 @@
 PODS:
-  - BLFoundation/Tools (0.5.5)
   - SPKit (0.3.2):
     - SPKit/CALayer (= 0.3.2)
     - SPKit/CGRect (= 0.3.2)
@@ -29,12 +28,10 @@ PODS:
   - SPKit/UICell (0.3.2):
     - SPKit/Core
   - SPKit/UIColor (0.3.2)
-  - SPKit/UIControl (0.3.2):
-    - BLFoundation/Tools
+  - SPKit/UIControl (0.3.2)
   - SPKit/UIImage (0.3.2):
     - SPKit/Core
   - SPKit/UILabel (0.3.2):
-    - BLFoundation/Tools
     - SPKit/Core
   - SPKit/UIStoryboard (0.3.2)
   - SPKit/UITextField (0.3.2)
@@ -46,17 +43,12 @@ PODS:
 DEPENDENCIES:
   - SPKit (from `../`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - BLFoundation
-
 EXTERNAL SOURCES:
   SPKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BLFoundation: f6df2c1f6641c1a1d077521be07402d1af0c9958
-  SPKit: 3cabdfb15d44e855a80aac899b49b03b8cc24912
+  SPKit: 2a76d07585a4d78c63c6e536ba8aed3e5be90a55
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 

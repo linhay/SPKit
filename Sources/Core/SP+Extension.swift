@@ -22,9 +22,7 @@
 
 import UIKit
 
-class Extensions { }
-
-public struct BLExtension<Base> {
+public struct SPExtension<Base> {
   public let base: Base
   public init(_ base: Base) {
     self.base = base
@@ -37,14 +35,12 @@ public protocol ExtensionCompatible {
 }
 
 public extension ExtensionCompatible {
-  public var sp: BLExtension<Self> {
-    get { return BLExtension(self) }
+  public var sp: SPExtension<Self> {
+    get { return SPExtension(self) }
   }
 }
 
-extension UIImage: ExtensionCompatible { }
-extension UIView: ExtensionCompatible { }
-extension UIViewController: ExtensionCompatible { }
+
 
 
 

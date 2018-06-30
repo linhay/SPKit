@@ -21,7 +21,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
 import UIKit
-import BLFoundation
 
 public extension UIControl {
   public func add(for event: UIControlEvents,
@@ -45,9 +44,23 @@ extension UIControl {
   fileprivate class func swizzing() {
     if once == false {
       once = true
-      RunTime.exchangeMethod(selector: #selector(UIControl.sendAction(_:to:for:)),
-                             replace: #selector(UIControl.sp_sendAction(action:to:forEvent:)),
-                             class: UIControl.self)
+      let select1 = #selector(UIControl.sendAction(_:to:for:))
+      let select2 = #selector(UIControl.sp_sendAction(action:to:forEvent:))
+      let classType = UIControl.self
+      let select1Method = class_getInstanceMethod(classType, select1)
+      let select2Method = class_getInstanceMethod(classType, select2)
+      let didAddMethod  = class_addMethod(classType,
+                                          select1,
+                                          method_getImplementation(select2Method!),
+                                          method_getTypeEncoding(select2Method!))
+      if didAddMethod {
+        class_replaceMethod(classType,
+                            select2,
+                            method_getImplementation(select1Method!),
+                            method_getTypeEncoding(select1Method!))
+      }else {
+        method_exchangeImplementations(select1Method!, select2Method!)
+      }
     }
   }
   

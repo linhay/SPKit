@@ -72,12 +72,7 @@
     },
     {
       "name": "UIControl",
-      "source_files": "Sources/UIControl/**",
-      "dependencies": {
-        "BLFoundation/Tools": [
-
-        ]
-      }
+      "source_files": "Sources/UIControl/**"
     },
     {
       "name": "UIImage",
@@ -93,9 +88,6 @@
       "source_files": "Sources/UILabel/**",
       "dependencies": {
         "SPKit/Core": [
-
-        ],
-        "BLFoundation/Tools": [
 
         ]
       }

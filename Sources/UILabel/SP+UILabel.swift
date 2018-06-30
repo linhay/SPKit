@@ -21,9 +21,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
 import UIKit
-import BLFoundation
 
-public extension BLExtension where Base: UILabel {
+public extension SPExtension where Base: UILabel {
   /// 改变字体大小 增加或者减少
   public func change(font offSet: CGFloat) {
     base.font = UIFont(name: base.font.fontName, size: base.font.pointSize + offSet)
@@ -37,9 +36,24 @@ extension UILabel {
   fileprivate class func swizzig() {
     if once == false {
       once = true
-      RunTime.exchangeMethod(selector: #selector(UILabel.drawText(in:)),
-                             replace: #selector(UILabel.sp_drawText(in:)),
-                             class: UILabel.self)
+      
+      let select1 = #selector(UILabel.drawText(in:))
+      let select2 = #selector(UILabel.sp_drawText(in:))
+      let classType = UILabel.self
+      let select1Method = class_getInstanceMethod(classType, select1)
+      let select2Method = class_getInstanceMethod(classType, select2)
+      let didAddMethod  = class_addMethod(classType,
+                                          select1,
+                                          method_getImplementation(select2Method!),
+                                          method_getTypeEncoding(select2Method!))
+      if didAddMethod {
+        class_replaceMethod(classType,
+                            select2,
+                            method_getImplementation(select1Method!),
+                            method_getTypeEncoding(select1Method!))
+      }else {
+        method_exchangeImplementations(select1Method!, select2Method!)
+      }
     }
   }
   

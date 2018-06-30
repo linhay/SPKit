@@ -21,6 +21,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
 import UIKit
+import SPKit
+
+extension UIImage: ExtensionCompatible { }
 
 // MARK: - 初始化
 public extension UIImage{
@@ -56,7 +59,7 @@ public extension UIImage{
   
 }
 
-public extension BLExtension where Base: UIImage{
+public extension SPExtension where Base: UIImage{
   
   /// 图片尺寸: Bytes
   public var sizeAsBytes: Int
@@ -75,7 +78,7 @@ public extension BLExtension where Base: UIImage{
 }
 
 // MARK: - 类方法
-public extension BLExtension where Base: UIImage{
+public extension SPExtension where Base: UIImage{
   /// 返回一张没有被渲染图片
   public var original: UIImage { return base.withRenderingMode(.alwaysOriginal) }
   
@@ -91,7 +94,7 @@ public extension BLExtension where Base: UIImage{
 }
 
 // MARK: - 图片处理
-public extension BLExtension where Base: UIImage{
+public extension SPExtension where Base: UIImage{
   
   /// 裁剪对应区域
   ///
@@ -231,7 +234,7 @@ public extension BLExtension where Base: UIImage{
 }
 
 // MARK: - 尺寸相关
-public extension BLExtension where Base: UIImage{
+public extension SPExtension where Base: UIImage{
   
   /// 等比率缩放
   ///

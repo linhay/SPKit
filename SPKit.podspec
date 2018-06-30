@@ -57,7 +57,6 @@ end
 
 s.subspec 'UIControl' do |ss|
   ss.source_files = 'Sources/UIControl/**'
-  ss.dependency 'BLFoundation/Tools'
 end
 
 s.subspec 'UIImage' do |ss|
@@ -68,7 +67,6 @@ end
 s.subspec 'UILabel' do |ss|
   ss.source_files = 'Sources/UILabel/**'
   ss.dependency 'SPKit/Core'
-  ss.dependency 'BLFoundation/Tools'
 end
 
 s.subspec 'UIStoryboard' do |ss|
