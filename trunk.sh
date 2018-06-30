@@ -3,6 +3,9 @@
 value=./*.podspec
 file=${value##*/}
 
+# 文档生成
+jazzy --podspec ${file}
+
 echo "podspec:"  ${file}
 #获取podspec 中版本号
 version=`grep -m1 "s.version" ${file}|awk '{print $NF}'|sed "s/\'//g"`
