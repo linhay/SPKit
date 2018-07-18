@@ -123,6 +123,22 @@ public extension SPExtension where Base: UIImage{
     let sizeAsKB = self.sizeAsKB
     return sizeAsBytes != 0 ? sizeAsKB / 1024: 0 }
   
+  /// 获取 base64 字符串
+  ///
+  /// - Parameter quality: 图片质量 用于JPEG, 默认为 1
+  /// - Returns: base64String
+  public func base64String(quality: CGFloat = 1.0) -> String? {
+    if let data = UIImageJPEGRepresentation(base, quality) {
+      return data.base64EncodedString()
+    }
+    
+    if let data = UIImagePNGRepresentation(base) {
+      return data.base64EncodedString()
+    }
+    
+    return nil
+  }
+  
 }
 
 // MARK: - 类方法
