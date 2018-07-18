@@ -21,7 +21,55 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 
 import UIKit
-import SPKit
+
+#if canImport(UIKit)
+import CoreMedia
+
+public extension UIImage{
+  /// from CMSampleBuffer
+  ///
+  /// must import CoreMedia
+  /// from: https://stackoverflow.com/questions/15726761/make-an-uiimage-from-a-cmsamplebuffer
+  ///
+  /// - Parameter sampleBuffer: CMSampleBuffer
+  public convenience init?(sampleBuffer: CMSampleBuffer) {
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return nil }
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, .readOnly)
+    // Get the number of bytes per row for the pixel buffer
+    let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer)
+    // Get the number of bytes per row for the pixel buffer
+    let bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer)
+    // Get the pixel buffer width and height
+    let width = CVPixelBufferGetWidth(imageBuffer)
+    let height = CVPixelBufferGetHeight(imageBuffer)
+    // Create a device-dependent RGB color space
+    let colorSpace = CGColorSpaceCreateDeviceRGB()
+    // Create a bitmap graphics context with the sample buffer data
+    var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Little.rawValue
+    bitmapInfo |= CGImageAlphaInfo.premultipliedFirst.rawValue & CGBitmapInfo.alphaInfoMask.rawValue
+    
+    //let bitmapInfo: UInt32 = CGBitmapInfo.alphaInfoMask.rawValue
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    guard let context = CGContext(data: baseAddress,
+                                  width: width,
+                                  height: height,
+                                  bitsPerComponent: 8,
+                                  bytesPerRow: bytesPerRow,
+                                  space: colorSpace,
+                                  bitmapInfo: bitmapInfo),
+      let quartzImage = context.makeImage() else { return nil }
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer, .readOnly)
+    // Create an image object from the Quartz image
+    self.init(cgImage: quartzImage)
+  }
+  
+}
+
+#endif
+
 
 extension UIImage: ExtensionCompatible { }
 
@@ -252,4 +300,5 @@ public extension SPExtension where Base: UIImage{
   public func compress(rate: CGFloat) -> Data? {
     return UIImageJPEGRepresentation(base, rate)
   }
+  
 }
