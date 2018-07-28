@@ -41,7 +41,4 @@ public extension ExtensionCompatible {
 }
 
 
-
-
-
-
+extension NSObject: ExtensionCompatible { }

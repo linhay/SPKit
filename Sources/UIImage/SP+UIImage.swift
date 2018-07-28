@@ -70,9 +70,6 @@ public extension UIImage{
 
 #endif
 
-
-extension UIImage: ExtensionCompatible { }
-
 // MARK: - 初始化
 public extension UIImage{
   

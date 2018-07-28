@@ -10,6 +10,7 @@ s.author           = { 'lin' => 'is.linhay@outlook.com' }
 s.source = { :git => 'https://github.com/linhay/SPKit.git', :tag => s.version.to_s }
 
 s.ios.deployment_target = '8.0'
+s.swift_version = '4.0'
 
 s.frameworks = ['UIKit']
 s.requires_arc = true
