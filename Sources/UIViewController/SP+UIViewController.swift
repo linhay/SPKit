@@ -63,7 +63,7 @@ public extension SPExtension where Base: UIViewController {
     }
     guard let rootViewController = UIApplication.shared.windows.filter({ (item) -> Bool in
       /// =.=,如果没手动设置的话...
-      return item.windowLevel == CGFloat(0.0) && item.isKeyWindow
+      return item.windowLevel == 0.0 && item.isKeyWindow
     }).first?.rootViewController else {
       return false
     }
