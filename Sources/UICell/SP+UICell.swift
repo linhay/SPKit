@@ -40,6 +40,7 @@ public extension SPNibProtocol {
   }
 }
 
+// MARK: - UITableView
 public extension SPExtension where Base: UITableView{
 
   public func register<T: UITableViewCell>(_ cell: T.Type) where T: SPCellProtocol {

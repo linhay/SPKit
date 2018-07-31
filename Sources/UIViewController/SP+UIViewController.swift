@@ -52,7 +52,7 @@ public extension UIViewController {
   
 }
 
-// MARK: - ivar
+// MARK: - UIViewController
 public extension SPExtension where Base: UIViewController {
   
   /// tabbarHeight高度
@@ -76,11 +76,6 @@ public extension SPExtension where Base: UIViewController {
     guard let vc = UIViewController.current else { return false }
     return vc == base || vc.tabBarController == base || vc.navigationController == base
   }
-  
-}
-
-// MARK: - function
-public extension SPExtension where Base: UIViewController {
   
   /// 前进至指定控制器
   ///

@@ -104,6 +104,8 @@ public extension UIImage{
   
 }
 
+
+// MARK: - UIImage
 public extension SPExtension where Base: UIImage{
   
   /// 图片尺寸: Bytes
@@ -138,7 +140,7 @@ public extension SPExtension where Base: UIImage{
   
 }
 
-// MARK: - 类方法
+// MARK: - UIImage
 public extension SPExtension where Base: UIImage{
   /// 返回一张没有被渲染图片
   public var original: UIImage { return base.withRenderingMode(.alwaysOriginal) }
@@ -154,7 +156,7 @@ public extension SPExtension where Base: UIImage{
   
 }
 
-// MARK: - 图片处理
+// MARK: - UIImage 图片处理
 public extension SPExtension where Base: UIImage{
   
   /// 裁剪对应区域
@@ -294,7 +296,7 @@ public extension SPExtension where Base: UIImage{
   
 }
 
-// MARK: - 尺寸相关
+// MARK: - UIImage 尺寸相关
 public extension SPExtension where Base: UIImage{
   
   /// 等比率缩放
