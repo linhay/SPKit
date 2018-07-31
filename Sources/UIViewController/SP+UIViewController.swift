@@ -22,31 +22,10 @@
 
 import UIKit
 
-public extension SPExtension where Base: UIViewController {
+public extension UIViewController {
   
-  /// tabbarHeight高度
-  public var tabbarHeight: CGFloat {
-    return base.tabBarController?.tabBar.bounds.height ?? 0
-  }
-  
-  /// 能否回退
-  public var canback: Bool {
-    return (base.navigationController?.viewControllers.count ?? 0) > 1
-  }
-  
-}
-
-public extension SPExtension where Base: UIViewController {
-  
-  public var isByPresented: Bool {
-    guard base.navigationController != nil else { return false }
-    guard base.navigationController!.viewControllers.count > 0 else { return false }
-    guard base.presentingViewController == nil else { return false }
-    return true
-  }
-  
-  /// 是否是当前显示控制器
-  public var isVisible: Bool {
+  /// 获取当前显示控制器
+  public static var current: UIViewController? {
     func find(rawVC: UIViewController) -> UIViewController {
       switch rawVC {
       case let nav as UINavigationController:
@@ -65,12 +44,43 @@ public extension SPExtension where Base: UIViewController {
       /// =.=,如果没手动设置的话...
       return item.windowLevel == 0.0 && item.isKeyWindow
     }).first?.rootViewController else {
-      return false
+      assert(false)
+      return UIViewController()
     }
-    let vc = find(rawVC: rootViewController)
+    return find(rawVC: rootViewController)
+  }
+  
+}
+
+// MARK: - ivar
+public extension SPExtension where Base: UIViewController {
+  
+  /// tabbarHeight高度
+  public var tabbarHeight: CGFloat {
+    return base.tabBarController?.tabBar.bounds.height ?? 0
+  }
+  
+  /// 能否回退
+  public var canback: Bool {
+    return (base.navigationController?.viewControllers.count ?? 0) > 1
+  }
+  
+  /// 当前是控制器是否是被modal出来
+  public var isByPresented: Bool {
+    guard base.presentingViewController == nil else { return false }
+    return true
+  }
+  
+  /// 是否是当前显示控制器
+  public var isVisible: Bool {
+    guard let vc = UIViewController.current else { return false }
     return vc == base || vc.tabBarController == base || vc.navigationController == base
   }
   
+}
+
+// MARK: - function
+public extension SPExtension where Base: UIViewController {
   
   /// 前进至指定控制器
   ///
@@ -78,9 +88,7 @@ public extension SPExtension where Base: UIViewController {
   ///   - vc: 指定控制器
   ///   - isRemove: 前进后是否移除当前控制器
   ///   - animated: 是否显示动画
-  public func push(vc: UIViewController?,
-                   isRemove: Bool = false,
-                   animated: Bool = true) {
+  public func push(vc: UIViewController?, isRemove: Bool = false, animated: Bool = true) {
     guard let vc = vc else { return }
     switch base {
     case let nav as UINavigationController:
@@ -101,9 +109,7 @@ public extension SPExtension where Base: UIViewController {
   ///   - vc: 指定控制器
   ///   - animated: 是否显示动画
   ///   - completion: 完成后事件
-  func present(vc: UIViewController?,
-               animated: Bool = true,
-               completion: (() -> Void)? = nil) {
+  func present(vc: UIViewController?, animated: Bool = true, completion: (() -> Void)? = nil) {
     guard let vc = vc else { return }
     base.present(vc, animated: animated, completion: completion)
   }
@@ -112,7 +118,8 @@ public extension SPExtension where Base: UIViewController {
   ///
   /// - Parameter animated: 是否显示动画
   /// - Returns: vc
-  @discardableResult public func pop(animated: Bool) -> UIViewController? {
+  @discardableResult
+  public func pop(animated: Bool) -> UIViewController? {
     switch base {
     case let nav as UINavigationController:
       return nav.popViewController(animated: animated)
@@ -127,7 +134,8 @@ public extension SPExtension where Base: UIViewController {
   ///   - vc: 指定控制器
   ///   - animated: 是否显示动画
   /// - Returns: vcs
-  @discardableResult public func pop(vc: UIViewController, animated: Bool) -> [UIViewController]? {
+  @discardableResult
+  public func pop(vc: UIViewController, animated: Bool) -> [UIViewController]? {
     switch base {
     case let nav as UINavigationController:
       return nav.popToViewController(vc, animated: animated)
@@ -140,7 +148,8 @@ public extension SPExtension where Base: UIViewController {
   ///
   /// - Parameter animated: 是否显示动画
   /// - Returns: vcs
-  @discardableResult public func pop(toRootVC animated: Bool) -> [UIViewController]? {
+  @discardableResult
+  public func pop(toRootVC animated: Bool) -> [UIViewController]? {
     if let vc = base as? UINavigationController {
       return vc.popToRootViewController(animated: animated)
     }else{

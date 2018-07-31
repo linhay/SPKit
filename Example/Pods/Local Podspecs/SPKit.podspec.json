@@ -1,6 +1,6 @@
 {
   "name": "SPKit",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "summary": "A set of useful categories for Foundation and UIKit.",
   "homepage": "https://github.com/linhay/SPKit.git",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/linhay/SPKit.git",
-    "tag": "0.3.2"
+    "tag": "0.3.3"
   },
   "platforms": {
     "ios": "8.0"
