@@ -23,7 +23,7 @@
 import UIKit
 
 public extension UIButton {
-
+  
   /// 设置背景颜色
   ///
   /// - Parameters:
@@ -37,6 +37,46 @@ public extension UIButton {
     UIGraphicsEndImageContext()
     self.setBackgroundImage(colorImage, for: forState)
   }
-
+  
 }
 
+
+public extension SPExtension where Base: UIButton{
+  
+  /// 图片与文字水平居中
+  ///
+  /// - Parameter spacing: 图片与文字间距
+  public func horizontalCenterTitleAndImage(spacing: CGFloat) {
+    let imageSize = base.imageView?.frame.size ?? .zero
+    var titleSize = CGSize.zero
+    if let label = base.titleLabel, let text = label.text {
+      titleSize = (text as NSString).boundingRect(with: base.bounds.size,
+                                                  options: [.usesLineFragmentOrigin],
+                                                  attributes: [NSAttributedString.Key.font : label.font],
+                                                  context: nil).size
+    }
+    
+    let totalWidth = (imageSize.width + titleSize.width + spacing)
+    base.imageEdgeInsets = UIEdgeInsets(top:0, left:0, bottom:0, right:-(totalWidth - imageSize.width) * 2)
+    base.titleEdgeInsets = UIEdgeInsets(top:0, left:-(totalWidth - titleSize.width) * 2,bottom: 0,right: 0)
+  }
+  
+  /// 图片与文字垂直居中
+  ///
+  /// - Parameter spacing: 图片与文字间距
+  public func verticalCenterImageAndTitle(spacing: CGFloat) {
+    let imageSize = base.imageView?.frame.size ?? .zero
+    var titleSize = CGSize.zero
+    if let label = base.titleLabel, let text = label.text {
+      titleSize = (text as NSString).boundingRect(with: base.bounds.size,
+                                                  options: [.usesLineFragmentOrigin],
+                                                  attributes: [NSAttributedString.Key.font : label.font],
+                                                  context: nil).size
+    }
+    
+    let totalHeight = imageSize.height + titleSize.height + spacing
+    base.imageEdgeInsets = UIEdgeInsets(top: imageSize.height - totalHeight, left: 0, bottom: 0, right: -titleSize.width)
+    base.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom:titleSize.height - totalHeight, right: 0)
+  }
+  
+}

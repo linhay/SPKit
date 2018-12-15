@@ -1,6 +1,6 @@
 {
   "name": "SPKit",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "summary": "A set of useful categories for Foundation and UIKit.",
   "homepage": "https://github.com/linhay/SPKit.git",
   "license": {
@@ -12,19 +12,16 @@
   },
   "source": {
     "git": "https://github.com/linhay/SPKit.git",
-    "tag": "0.3.3"
+    "tag": "0.4.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "swift_version": "4.0",
+  "swift_version": "4.2",
   "frameworks": [
     "UIKit"
   ],
   "requires_arc": true,
-  "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.0"
-  },
   "subspecs": [
     {
       "name": "Core",
@@ -113,6 +110,15 @@
     {
       "name": "UIViewController",
       "source_files": "Sources/UIViewController/**",
+      "dependencies": {
+        "SPKit/Core": [
+
+        ]
+      }
+    },
+    {
+      "name": "UITableView",
+      "source_files": "Sources/UITableView/**",
       "dependencies": {
         "SPKit/Core": [
 

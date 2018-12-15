@@ -36,6 +36,36 @@ public extension UIView{
     get{ return frame.origin.y }
     set{ self.frame.origin.y = newValue }
   }
+  
+  public var minX: CGFloat {
+    get{ return self.frame.minX }
+    set{ self.x = newValue }
+  }
+  
+  public var midX: CGFloat {
+    get{ return self.frame.midX }
+    set{ self.x = newValue - self.width * 0.5 }
+  }
+  
+  public var maxX: CGFloat {
+    get{ return self.frame.maxX }
+    set{ self.x = newValue - self.width }
+  }
+  
+  public var minY: CGFloat {
+    get{ return self.frame.minY }
+    set{ self.y = newValue }
+  }
+  
+  public var midY: CGFloat {
+    get{ return self.frame.midY }
+    set{ self.y = newValue - self.height * 0.5 }
+  }
+  
+  public var maxY: CGFloat {
+    get{ return self.frame.maxY }
+    set{ self.y = newValue - self.height }
+  }
 
   /// view的宽度
   public var width: CGFloat {

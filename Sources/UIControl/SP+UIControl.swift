@@ -22,9 +22,15 @@
 
 import UIKit
 
+// MARK: - <#Description#>
 public extension UIControl {
-  public func add(for event: UIControl.Event,
-                  action: @escaping () -> ()) {
+  
+  /// 添加响应事件
+  ///
+  /// - Parameters:
+  ///   - event: 响应事件类型
+  ///   - action: 响应事件
+  public func add(for event: UIControl.Event, action: @escaping () -> ()) {
     guard let selector = selector(event: event) else { return }
     let act = ActionBlock(key: event.rawValue, action: action)
     actionBlocks = actionBlocks.filter { (item) -> Bool in

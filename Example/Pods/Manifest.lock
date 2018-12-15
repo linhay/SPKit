@@ -1,43 +1,46 @@
 PODS:
-  - SPKit (0.3.3):
-    - SPKit/CALayer (= 0.3.3)
-    - SPKit/CGRect (= 0.3.3)
-    - SPKit/Core (= 0.3.3)
-    - SPKit/Foundation (= 0.3.3)
-    - SPKit/NSLayoutConstraint (= 0.3.3)
-    - SPKit/UIApplication (= 0.3.3)
-    - SPKit/UIBarButtonItem (= 0.3.3)
-    - SPKit/UIButton (= 0.3.3)
-    - SPKit/UICell (= 0.3.3)
-    - SPKit/UIColor (= 0.3.3)
-    - SPKit/UIControl (= 0.3.3)
-    - SPKit/UIImage (= 0.3.3)
-    - SPKit/UILabel (= 0.3.3)
-    - SPKit/UIStoryboard (= 0.3.3)
-    - SPKit/UITextField (= 0.3.3)
-    - SPKit/UIView (= 0.3.3)
-    - SPKit/UIViewController (= 0.3.3)
-  - SPKit/CALayer (0.3.3)
-  - SPKit/CGRect (0.3.3)
-  - SPKit/Core (0.3.3)
-  - SPKit/Foundation (0.3.3)
-  - SPKit/NSLayoutConstraint (0.3.3)
-  - SPKit/UIApplication (0.3.3)
-  - SPKit/UIBarButtonItem (0.3.3)
-  - SPKit/UIButton (0.3.3)
-  - SPKit/UICell (0.3.3):
+  - SPKit (0.4.0):
+    - SPKit/CALayer (= 0.4.0)
+    - SPKit/CGRect (= 0.4.0)
+    - SPKit/Core (= 0.4.0)
+    - SPKit/Foundation (= 0.4.0)
+    - SPKit/NSLayoutConstraint (= 0.4.0)
+    - SPKit/UIApplication (= 0.4.0)
+    - SPKit/UIBarButtonItem (= 0.4.0)
+    - SPKit/UIButton (= 0.4.0)
+    - SPKit/UICell (= 0.4.0)
+    - SPKit/UIColor (= 0.4.0)
+    - SPKit/UIControl (= 0.4.0)
+    - SPKit/UIImage (= 0.4.0)
+    - SPKit/UILabel (= 0.4.0)
+    - SPKit/UIStoryboard (= 0.4.0)
+    - SPKit/UITableView (= 0.4.0)
+    - SPKit/UITextField (= 0.4.0)
+    - SPKit/UIView (= 0.4.0)
+    - SPKit/UIViewController (= 0.4.0)
+  - SPKit/CALayer (0.4.0)
+  - SPKit/CGRect (0.4.0)
+  - SPKit/Core (0.4.0)
+  - SPKit/Foundation (0.4.0)
+  - SPKit/NSLayoutConstraint (0.4.0)
+  - SPKit/UIApplication (0.4.0)
+  - SPKit/UIBarButtonItem (0.4.0)
+  - SPKit/UIButton (0.4.0)
+  - SPKit/UICell (0.4.0):
     - SPKit/Core
-  - SPKit/UIColor (0.3.3)
-  - SPKit/UIControl (0.3.3)
-  - SPKit/UIImage (0.3.3):
+  - SPKit/UIColor (0.4.0)
+  - SPKit/UIControl (0.4.0)
+  - SPKit/UIImage (0.4.0):
     - SPKit/Core
-  - SPKit/UILabel (0.3.3):
+  - SPKit/UILabel (0.4.0):
     - SPKit/Core
-  - SPKit/UIStoryboard (0.3.3)
-  - SPKit/UITextField (0.3.3)
-  - SPKit/UIView (0.3.3):
+  - SPKit/UIStoryboard (0.4.0)
+  - SPKit/UITableView (0.4.0):
     - SPKit/Core
-  - SPKit/UIViewController (0.3.3):
+  - SPKit/UITextField (0.4.0)
+  - SPKit/UIView (0.4.0):
+    - SPKit/Core
+  - SPKit/UIViewController (0.4.0):
     - SPKit/Core
 
 DEPENDENCIES:
@@ -48,8 +51,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SPKit: 0c46f06fa2fe159897c535a4ffd9b07dbd9f16d4
+  SPKit: 03d17d33323dddbad6f6c1716490c52139eee278
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2
