@@ -44,7 +44,7 @@ public extension UIButton {
 // MARK: - UIButton 扩展函数
 public extension SPExtension where Base: UIButton{
   
-  /// 图片与文字水平居中
+  /// 文字与图片水平居中
   ///
   /// - Parameter spacing: 图片与文字间距
   public func horizontalCenterTitleAndImage(spacing: CGFloat) {

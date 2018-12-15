@@ -73,16 +73,6 @@ public extension UIImage{
 // MARK: - 初始化
 public extension UIImage{
   
-  /// 图像处理: 裁圆
-  ///
-  /// - Parameter round: 需处理的图片/图片名称
-  /// - Returns: 新图
-  public convenience init?(round name: String) {
-    let img = UIImage(named: name)?.sp.roundImg
-    guard let cgImg = img?.cgImage else { return nil }
-    self.init(cgImage: cgImg)
-  }
-  
   /// 获取指定颜色的图片
   ///
   /// - Parameters:
@@ -122,38 +112,14 @@ public extension SPExtension where Base: UIImage{
     let sizeAsKB = self.sizeAsKB
     return sizeAsBytes != 0 ? sizeAsKB / 1024: 0 }
   
-  /// 获取 base64 字符串
-  ///
-  /// - Parameter quality: 图片质量 用于JPEG, 默认为 1
-  /// - Returns: base64String
-  public func base64String(quality: CGFloat = 1.0) -> String? {
-    if let data = base.jpegData(compressionQuality: quality) {
-      return data.base64EncodedString()
-    }
-    
-    if let data = base.pngData() {
-      return data.base64EncodedString()
-    }
-    
-    return nil
-  }
-  
 }
 
 // MARK: - UIImage
 public extension SPExtension where Base: UIImage{
   /// 返回一张没有被渲染图片
   public var original: UIImage { return base.withRenderingMode(.alwaysOriginal) }
-  
-  /// 返回圆形图片
-  public var roundImg: UIImage {
-    return base.sp.round(radius: base.size.height * 0.5,
-                         corners: .allCorners,
-                         borderWidth: 0,
-                         borderColor: nil,
-                         borderLineJoin: .miter)
-  }
-  
+  /// 返回一张可被渲染图片
+  public var template: UIImage { return base.withRenderingMode(.alwaysTemplate) }
 }
 
 // MARK: - UIImage 图片处理
@@ -164,13 +130,21 @@ public extension SPExtension where Base: UIImage{
   /// - Parameter bound: 裁剪区域
   /// - Returns: 新图
   public func crop(bound: CGRect) -> UIImage {
-    guard bound.minX >= base.size.width,bound.minY >= base.size.height else { return base }
     let scaledBounds = CGRect(x: bound.origin.x * base.scale,
                               y: bound.origin.y * base.scale,
                               width: bound.size.width * base.scale,
                               height: bound.size.height * base.scale)
     guard let cgImage = base.cgImage?.cropping(to: scaledBounds) else { return base }
     return UIImage(cgImage: cgImage, scale: base.scale, orientation: .up)
+  }
+  
+  /// 返回圆形图片
+  public func rounded() -> UIImage {
+    return base.sp.rounded(radius: base.size.height * 0.5,
+                           corners: .allCorners,
+                           borderWidth: 0,
+                           borderColor: nil,
+                           borderLineJoin: .miter)
   }
   
   /// 图像处理: 裁圆
@@ -181,27 +155,28 @@ public extension SPExtension where Base: UIImage{
   /// - borderColor: 描边颜色
   /// - borderLineJoin: 描边类型
   /// - Returns: 新图
-  public func round(radius: CGFloat,
-                    corners: UIRectCorner = .allCorners,
-                    borderWidth: CGFloat = 0,
-                    borderColor: UIColor? = nil,
-                    borderLineJoin: CGLineJoin = .miter) -> UIImage {
+  public func rounded(radius: CGFloat,
+                      corners: UIRectCorner = .allCorners,
+                      borderWidth: CGFloat = 0,
+                      borderColor: UIColor? = nil,
+                      borderLineJoin: CGLineJoin = .miter) -> UIImage {
     var corners = corners
-    
     if corners != UIRectCorner.allCorners {
-      var  tmp: UIRectCorner = UIRectCorner(rawValue: 0)
+      var rawValue: UInt = 0
       if (corners.rawValue & UIRectCorner.topLeft.rawValue) != 0
-      { tmp = UIRectCorner(rawValue: tmp.rawValue | UIRectCorner.bottomLeft.rawValue) }
-      if (corners.rawValue & UIRectCorner.topLeft.rawValue) != 0
-      { tmp = UIRectCorner(rawValue: tmp.rawValue | UIRectCorner.bottomRight.rawValue) }
+      { rawValue = rawValue | UIRectCorner.bottomLeft.rawValue }
+      if (corners.rawValue & UIRectCorner.topRight.rawValue) != 0
+      { rawValue = rawValue | UIRectCorner.bottomRight.rawValue }
       if (corners.rawValue & UIRectCorner.bottomLeft.rawValue) != 0
-      { tmp = UIRectCorner(rawValue: tmp.rawValue | UIRectCorner.topLeft.rawValue) }
+      { rawValue = rawValue | UIRectCorner.topLeft.rawValue }
       if (corners.rawValue & UIRectCorner.bottomRight.rawValue) != 0
-      { tmp = UIRectCorner(rawValue: tmp.rawValue | UIRectCorner.topRight.rawValue) }
-      corners = tmp
+      { rawValue = rawValue | UIRectCorner.topRight.rawValue }
+      corners = UIRectCorner(rawValue: rawValue)
     }
     UIGraphicsBeginImageContextWithOptions(base.size, false, base.scale)
-    guard let context = UIGraphicsGetCurrentContext() else { return UIImage() }
+    defer { UIGraphicsEndImageContext() }
+    
+    guard let context = UIGraphicsGetCurrentContext() else { return base }
     let rect = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
     context.scaleBy(x: 1, y: -1)
     context.translateBy(x: 0, y: -rect.height)
@@ -215,10 +190,7 @@ public extension SPExtension where Base: UIImage{
       path.close()
       context.saveGState()
       path.addClip()
-      guard let cgImage = base.cgImage else {
-        UIGraphicsEndImageContext()
-        return UIImage()
-      }
+      guard let cgImage = base.cgImage else { return base }
       context.draw(cgImage, in: rect)
       context.restoreGState()
     }
@@ -236,84 +208,41 @@ public extension SPExtension where Base: UIImage{
     }
     
     let image = UIGraphicsGetImageFromCurrentImageContext()
+    return image ?? base
+  }
+  
+  
+  /// 缩放至指定高度
+  ///
+  /// - Parameters:
+  ///   - toWidth: 高度
+  ///   - opaque: 透明开关，如果图形完全不用透明，设置为YES以优化位图的存储
+  /// - Returns: 新的图片
+  public func scaled(toHeight: CGFloat, opaque: Bool = false) -> UIImage? {
+    let scale = toHeight / base.size.height
+    let newWidth = base.size.width * scale
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: newWidth, height: toHeight), opaque, 0)
+    base.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: toHeight))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
-    return image ?? UIImage()
+    return newImage
   }
   
-  /// 根据宽度获取对应高度
-  ///
-  /// - Parameter width: 宽度
-  /// - Returns: 新高度
-  func aspectHeight(with width: CGFloat) -> CGFloat {
-    return (width * base.size.height) / base.size.width
-  }
   
-  /// 根据高度获取对应宽度
+  /// 缩放至指定宽度
   ///
-  /// - Parameter height: 高度
-  /// - Returns: 宽度
-  func aspectWidth(with height: CGFloat) -> CGFloat {
-    return (height * base.size.width) / base.size.height
-  }
-  
-  /// 重设图片大小
-  ///
-  /// - Parameter size: 新的尺寸
-  /// - Returns: 新图
-  public func reSize(size: CGSize) -> UIImage {
-    UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
-    base.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-    let reSizeImage = UIGraphicsGetImageFromCurrentImageContext()
+  /// - Parameters:
+  ///   - toWidth: 宽度
+  ///   - opaque: 透明开关，如果图形完全不用透明，设置为YES以优化位图的存储
+  /// - Returns: 新的图片
+  public func scaled(toWidth: CGFloat, opaque: Bool = false) -> UIImage? {
+    let scale = toWidth / base.size.width
+    let newHeight = base.size.height * scale
+    UIGraphicsBeginImageContextWithOptions(CGSize(width: toWidth, height: newHeight), opaque, 0)
+    base.draw(in: CGRect(x: 0, y: 0, width: toWidth, height: newHeight))
+    let newImage = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
-    return reSizeImage ?? base
-  }
-  
-  /// 根据宽度重设大小
-  ///
-  /// - Parameter width: 宽度
-  /// - Returns: 新图
-  public func resize(width: CGFloat) -> UIImage {
-    let aspectSize = CGSize(width: width, height: aspectHeight(with: width))
-    UIGraphicsBeginImageContext(aspectSize)
-    base.draw(in: CGRect(origin: CGPoint.zero, size: aspectSize))
-    let img = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return img ?? base
-  }
-  
-  /// 根据高度重设大小
-  ///
-  /// - Parameter height: 高度
-  /// - Returns: 新图
-  public func resize(height: CGFloat) -> UIImage {
-    let aspectSize = CGSize(width: aspectWidth(with: height), height: height)
-    UIGraphicsBeginImageContext(aspectSize)
-    base.draw(in: CGRect(origin: CGPoint.zero, size: aspectSize))
-    let img = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-    return img ?? base
-  }
-  
-}
-
-// MARK: - UIImage 尺寸相关
-public extension SPExtension where Base: UIImage{
-  
-  /// 等比率缩放
-  ///
-  /// - Parameter multiple: 倍数
-  /// - Returns: 新图
-  public func scale(multiple: CGFloat)-> UIImage {
-    let newSize = CGSize(width: base.size.width * multiple, height: base.size.height * multiple)
-    return reSize(size: newSize)
-  }
-  
-  /// 压缩图片
-  ///
-  /// - Parameter rate: 压缩比率
-  /// - Returns: 新图
-  public func compress(rate: CGFloat) -> Data? {
-    return base.jpegData(compressionQuality: rate)
+    return newImage
   }
   
 }

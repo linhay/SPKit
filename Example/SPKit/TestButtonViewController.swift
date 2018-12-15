@@ -9,7 +9,7 @@
 import UIKit
 import SPKit
 
-class TestButtonViewController: UIViewController {
+class TestButtonViewController: BaseViewController {
   
   
   let button: UIButton = {
@@ -17,44 +17,31 @@ class TestButtonViewController: UIViewController {
     button.translatesAutoresizingMaskIntoConstraints = false
     button.setImage(UIImage(color: UIColor.red, size: CGSize(width: 15, height: 15)), for: UIControl.State.normal)
     button.setTitle("文字文字文", for: UIControl.State.normal)
+    button.setTitleColor(UIColor.black, for: UIControl.State.normal)
     return button
   }()
-
-
-  @IBOutlet weak var tableView: StaticTableView!{
-    didSet{
-      tableView.separatorStyle = .none
-      tableView.dataSourceAuxiliary.numberOfSections = 1
-      tableView.dataSourceAuxiliary.numberOfRowsInSections = [2]
-
-      let cell1 = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-      cell1.textLabel?.text = "UIButton().sp.verticalCenterImageAndTitle(spacing: CGFloat)"
-      let cell2 = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
-      cell2.textLabel?.text = "UIButton().sp.horizontalCenterTitleAndImage(spacing: CGFloat)"
-      tableView.delegateAuxiliary.selectedEvents[0]?[0] = { 
-        self.contentView.sp.removeSubviews()
-        self.button.sp.verticalCenterImageAndTitle(spacing: 5)
-        self.contentView.addSubview(self.button)
-      }
-      tableView.delegateAuxiliary.selectedEvents[0]?[1] = {
-        self.contentView.sp.removeSubviews()
-        self.button.sp.horizontalCenterTitleAndImage(spacing: 5)
-        self.contentView.addSubview(self.button)
-      }
-      tableView.dataSourceAuxiliary.cells = [[cell1,cell2]]
+  
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    contentView.addSubview(button)
+    
+    button.do { (item) in
+      item.snp.makeConstraints({ (make) in
+        make.center.equalTo(self.contentView.snp.center)
+      })
     }
+    
+    items.append(TableElement(title: "sp.verticalCenterImageAndTitle(spacing: 5)",
+                              subtitle: "图片与文字垂直居中") {
+                                self.button.sp.verticalCenterImageAndTitle(spacing: 5)
+    })
+    
+    items.append(TableElement(title: "sp.horizontalCenterTitleAndImage(spacing: 5)",
+                              subtitle: "文字与图片水平居中") {
+      self.button.sp.horizontalCenterTitleAndImage(spacing: 5)
+    })
   }
   
-  @IBOutlet weak var contentView: UIView!{
-    didSet{
-      self.button.width  = self.contentView.width * 0.5
-      self.button.height = self.contentView.height * 0.5
-      self.button.midX = self.contentView.width * 0.5
-      self.button.midY = self.contentView.height * 0.5
-    }
-  }
-  
-  
-
-
 }

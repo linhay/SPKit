@@ -16,9 +16,11 @@
 		CD5365D4210C63A30056F174 /* create-apis.sh in Resources */ = {isa = PBXBuildFile; fileRef = CD5365D3210C63A30056F174 /* create-apis.sh */; };
 		CD5365D6210C66F00056F174 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = CD5365D5210C66EF0056F174 /* .travis.yml */; };
 		CD72E74121C4D40900DBAE3C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74021C4D40900DBAE3C /* TestViewController.swift */; };
-		CD72E74721C4FA1100DBAE3C /* StaticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74621C4FA1100DBAE3C /* StaticTableView.swift */; };
 		CD72E74921C4FAFC00DBAE3C /* TestButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74821C4FAFC00DBAE3C /* TestButtonViewController.swift */; };
 		CD72E74B21C5436E00DBAE3C /* TestImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74A21C5436E00DBAE3C /* TestImageViewController.swift */; };
+		CD72E74D21C5478C00DBAE3C /* TestImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74C21C5478C00DBAE3C /* TestImageController.swift */; };
+		CD72E74F21C54D6700DBAE3C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74E21C54D6700DBAE3C /* BaseViewController.swift */; };
+		CD72E75321C558D700DBAE3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E75221C558D700DBAE3C /* MainViewController.swift */; };
 		CDEE0CEE2106C6BA005ADF00 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = CDEE0CED2106C6BA005ADF00 /* .swift-version */; };
 /* End PBXBuildFile section */
 
@@ -40,9 +42,11 @@
 		CD5365D3210C63A30056F174 /* create-apis.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "create-apis.sh"; path = "../create-apis.sh"; sourceTree = "<group>"; };
 		CD5365D5210C66EF0056F174 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		CD72E74021C4D40900DBAE3C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		CD72E74621C4FA1100DBAE3C /* StaticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StaticTableView.swift; path = supoort/StaticTableView.swift; sourceTree = "<group>"; };
 		CD72E74821C4FAFC00DBAE3C /* TestButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestButtonViewController.swift; sourceTree = "<group>"; };
 		CD72E74A21C5436E00DBAE3C /* TestImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImageViewController.swift; sourceTree = "<group>"; };
+		CD72E74C21C5478C00DBAE3C /* TestImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImageController.swift; sourceTree = "<group>"; };
+		CD72E74E21C54D6700DBAE3C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CD72E75221C558D700DBAE3C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CDEE0CED2106C6BA005ADF00 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ".swift-version"; path = "../.swift-version"; sourceTree = "<group>"; };
 		D1A243F5BC56568AF35838AE /* Pods_SPKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SPKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9232ED13991CBCEBA2FEC6E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -94,12 +98,14 @@
 				CD72E74521C4F9F400DBAE3C /* support */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				CD72E75221C558D700DBAE3C /* MainViewController.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				CD72E74021C4D40900DBAE3C /* TestViewController.swift */,
 				CD72E74821C4FAFC00DBAE3C /* TestButtonViewController.swift */,
 				CD72E74A21C5436E00DBAE3C /* TestImageViewController.swift */,
+				CD72E74C21C5478C00DBAE3C /* TestImageController.swift */,
 			);
 			name = "Example for SPKit";
 			path = SPKit;
@@ -141,7 +147,7 @@
 		CD72E74521C4F9F400DBAE3C /* support */ = {
 			isa = PBXGroup;
 			children = (
-				CD72E74621C4FA1100DBAE3C /* StaticTableView.swift */,
+				CD72E74E21C54D6700DBAE3C /* BaseViewController.swift */,
 			);
 			name = support;
 			sourceTree = "<group>";
@@ -228,10 +234,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SPKit_Example/Pods-SPKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SPKit/SPKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SPKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -263,10 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD72E75321C558D700DBAE3C /* MainViewController.swift in Sources */,
 				CD72E74921C4FAFC00DBAE3C /* TestButtonViewController.swift in Sources */,
 				CD72E74B21C5436E00DBAE3C /* TestImageViewController.swift in Sources */,
 				CD72E74121C4D40900DBAE3C /* TestViewController.swift in Sources */,
-				CD72E74721C4FA1100DBAE3C /* StaticTableView.swift in Sources */,
+				CD72E74D21C5478C00DBAE3C /* TestImageController.swift in Sources */,
+				CD72E74F21C54D6700DBAE3C /* BaseViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

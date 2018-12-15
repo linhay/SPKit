@@ -1,4 +1,5 @@
 PODS:
+  - SnapKit (4.2.0)
   - SPKit (0.4.0):
     - SPKit/CALayer (= 0.4.0)
     - SPKit/CGRect (= 0.4.0)
@@ -40,17 +41,27 @@ PODS:
     - SPKit/Core
   - SPKit/UIViewController (0.4.0):
     - SPKit/Core
+  - Then (2.4.0)
 
 DEPENDENCIES:
+  - SnapKit
   - SPKit (from `../`)
+  - Then
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SnapKit
+    - Then
 
 EXTERNAL SOURCES:
   SPKit:
     :path: "../"
 
 SPEC CHECKSUMS:
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SPKit: 960aed6c7920b57b63b86f3427c7dea2e5832042
+  Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
-PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
+PODFILE CHECKSUM: 3152b9c3f53fdd5d0f868655800edf2b583806c9
 
 COCOAPODS: 1.6.0.beta.2
