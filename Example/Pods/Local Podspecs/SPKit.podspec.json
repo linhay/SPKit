@@ -48,10 +48,6 @@
       "source_files": "Sources/UIApplication/**"
     },
     {
-      "name": "UIBarButtonItem",
-      "source_files": "Sources/UIBarButtonItem/**"
-    },
-    {
       "name": "UIButton",
       "source_files": "Sources/UIButton/**"
     },
@@ -108,8 +104,8 @@
       }
     },
     {
-      "name": "UIViewController",
-      "source_files": "Sources/UIViewController/**",
+      "name": "UIImageView",
+      "source_files": "Sources/UIImageView/**",
       "dependencies": {
         "SPKit/Core": [
 
@@ -117,8 +113,8 @@
       }
     },
     {
-      "name": "UITableView",
-      "source_files": "Sources/UITableView/**",
+      "name": "UIViewController",
+      "source_files": "Sources/UIViewController/**",
       "dependencies": {
         "SPKit/Core": [
 

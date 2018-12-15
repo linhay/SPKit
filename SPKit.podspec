@@ -39,10 +39,6 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/UIApplication/**'
   end
   
-  s.subspec 'UIBarButtonItem' do |ss|
-    ss.source_files = 'Sources/UIBarButtonItem/**'
-  end
-  
   s.subspec 'UIButton' do |ss|
     ss.source_files = 'Sources/UIButton/**'
   end
@@ -83,14 +79,15 @@ Pod::Spec.new do |s|
     ss.dependency 'SPKit/Core'
   end
   
+  s.subspec 'UIImageView' do |ss|
+    ss.source_files = 'Sources/UIImageView/**'
+    ss.dependency 'SPKit/Core'
+  end
+  
   s.subspec 'UIViewController' do |ss|
     ss.source_files = 'Sources/UIViewController/**'
     ss.dependency 'SPKit/Core'
   end
   
-  s.subspec 'UITableView' do |ss|
-    ss.source_files = 'Sources/UITableView/**'
-    ss.dependency 'SPKit/Core'
-  end
   
 end

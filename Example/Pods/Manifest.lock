@@ -6,15 +6,14 @@ PODS:
     - SPKit/Foundation (= 0.4.0)
     - SPKit/NSLayoutConstraint (= 0.4.0)
     - SPKit/UIApplication (= 0.4.0)
-    - SPKit/UIBarButtonItem (= 0.4.0)
     - SPKit/UIButton (= 0.4.0)
     - SPKit/UICell (= 0.4.0)
     - SPKit/UIColor (= 0.4.0)
     - SPKit/UIControl (= 0.4.0)
     - SPKit/UIImage (= 0.4.0)
+    - SPKit/UIImageView (= 0.4.0)
     - SPKit/UILabel (= 0.4.0)
     - SPKit/UIStoryboard (= 0.4.0)
-    - SPKit/UITableView (= 0.4.0)
     - SPKit/UITextField (= 0.4.0)
     - SPKit/UIView (= 0.4.0)
     - SPKit/UIViewController (= 0.4.0)
@@ -24,7 +23,6 @@ PODS:
   - SPKit/Foundation (0.4.0)
   - SPKit/NSLayoutConstraint (0.4.0)
   - SPKit/UIApplication (0.4.0)
-  - SPKit/UIBarButtonItem (0.4.0)
   - SPKit/UIButton (0.4.0)
   - SPKit/UICell (0.4.0):
     - SPKit/Core
@@ -32,11 +30,11 @@ PODS:
   - SPKit/UIControl (0.4.0)
   - SPKit/UIImage (0.4.0):
     - SPKit/Core
+  - SPKit/UIImageView (0.4.0):
+    - SPKit/Core
   - SPKit/UILabel (0.4.0):
     - SPKit/Core
   - SPKit/UIStoryboard (0.4.0)
-  - SPKit/UITableView (0.4.0):
-    - SPKit/Core
   - SPKit/UITextField (0.4.0)
   - SPKit/UIView (0.4.0):
     - SPKit/Core
@@ -51,7 +49,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SPKit: 03d17d33323dddbad6f6c1716490c52139eee278
+  SPKit: 960aed6c7920b57b63b86f3427c7dea2e5832042
 
 PODFILE CHECKSUM: 3713742fb6e52f9f154b5104bbb46708a0ed8408
 
