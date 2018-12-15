@@ -68,6 +68,30 @@
                                             <segue destination="FwX-Xk-gFl" kind="show" id="iWQ-SK-cuJ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="45" id="9EC-ww-hpR">
+                                        <rect key="frame" x="0.0" y="90" width="375" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9EC-ww-hpR" id="dpQ-Vi-Mce">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIImageView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-Li-252">
+                                                    <rect key="frame" x="31" y="11" width="115" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0v9-Li-252" firstAttribute="top" secondItem="dpQ-Vi-Mce" secondAttribute="topMargin" id="Qej-YR-6gV"/>
+                                                <constraint firstItem="0v9-Li-252" firstAttribute="leading" secondItem="dpQ-Vi-Mce" secondAttribute="leadingMargin" constant="15" id="pIT-H3-QNd"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0v9-Li-252" secondAttribute="bottom" id="xDg-0Y-Lfc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bzp-gE-gfS" kind="show" id="JZ2-aa-Rmu"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -81,6 +105,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psu-E2-Pig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="-213.64317841079463"/>
+        </scene>
+        <!--TestImageView-->
+        <scene sceneID="kpG-dJ-A4G">
+            <objects>
+                <viewController title="TestImageView" id="bzp-gE-gfS" customClass="TestImageViewController" customModule="SPKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FIr-zx-IEN"/>
+                        <viewControllerLayoutGuide type="bottom" id="wYc-Kr-XDp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fKt-hN-NIE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jjv-05-iNl">
+                                <rect key="frame" x="8" y="72" width="359" height="202"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jjv-05-iNl" secondAttribute="height" multiplier="16:9" id="9c4-CC-5r4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-Pf-nGe">
+                                <rect key="frame" x="8" y="284" width="83" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="download"/>
+                                <connections>
+                                    <action selector="downloadEvent:" destination="bzp-gE-gfS" eventType="touchUpInside" id="mcs-kW-JBZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQu-IX-zTC">
+                                <rect key="frame" x="106" y="284" width="43" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                <state key="normal" title="blur"/>
+                                <connections>
+                                    <action selector="blurEvent:" destination="bzp-gE-gfS" eventType="touchUpInside" id="Spa-RY-QBc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jmx-Y7-jV5">
+                                <rect key="frame" x="8" y="614" width="359" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="33z-gl-2fp"/>
+                                </constraints>
+                                <state key="normal" title="removeSubviews"/>
+                                <connections>
+                                    <action selector="clear:" destination="bzp-gE-gfS" eventType="touchUpInside" id="EZd-en-imp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jmx-Y7-jV5" firstAttribute="leading" secondItem="fKt-hN-NIE" secondAttribute="leading" constant="8" id="4Cp-VU-imf"/>
+                            <constraint firstItem="dQu-IX-zTC" firstAttribute="top" secondItem="Jjv-05-iNl" secondAttribute="bottom" constant="10" id="A0S-7F-ctO"/>
+                            <constraint firstItem="U8i-Pf-nGe" firstAttribute="top" secondItem="Jjv-05-iNl" secondAttribute="bottom" constant="10" id="Gov-di-jRv"/>
+                            <constraint firstItem="Jjv-05-iNl" firstAttribute="top" secondItem="FIr-zx-IEN" secondAttribute="bottom" constant="8" id="HJj-Jy-yFT"/>
+                            <constraint firstItem="wYc-Kr-XDp" firstAttribute="top" secondItem="Jmx-Y7-jV5" secondAttribute="bottom" constant="8" id="O30-Qu-pii"/>
+                            <constraint firstItem="Jjv-05-iNl" firstAttribute="leading" secondItem="fKt-hN-NIE" secondAttribute="leading" constant="8" id="TPL-kK-WNZ"/>
+                            <constraint firstItem="U8i-Pf-nGe" firstAttribute="leading" secondItem="fKt-hN-NIE" secondAttribute="leading" constant="8" id="ZAW-Dm-KWn"/>
+                            <constraint firstItem="dQu-IX-zTC" firstAttribute="leading" secondItem="U8i-Pf-nGe" secondAttribute="trailing" constant="15" id="aWY-aw-9je"/>
+                            <constraint firstAttribute="trailing" secondItem="Jjv-05-iNl" secondAttribute="trailing" constant="8" id="geJ-i4-1AQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Jmx-Y7-jV5" secondAttribute="trailing" constant="8" id="uG3-5C-EDF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Jjv-05-iNl" id="xiJ-zf-U9f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBV-iB-kCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.79999999999995" y="-976.46176911544239"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="w3R-mR-Rlf">
@@ -157,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="961" y="-214"/>
         </scene>
-        <!--Test Button View Controller-->
+        <!--TestButton-->
         <scene sceneID="BTn-wO-vxA">
             <objects>
-                <viewController id="FwX-Xk-gFl" customClass="TestButtonViewController" customModule="SPKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="TestButton" id="FwX-Xk-gFl" customClass="TestButtonViewController" customModule="SPKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xml-c7-SgR"/>
                         <viewControllerLayoutGuide type="bottom" id="pXh-J2-Fgz"/>
