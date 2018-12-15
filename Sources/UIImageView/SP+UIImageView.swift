@@ -72,7 +72,7 @@ public extension SPExtension where Base: UIImageView {
   
   /// 毛玻璃效果
   ///
-  /// - Parameter style: 毛玻璃样式
+  /// - Parameter style: 毛玻璃样式[[
   public func blurred(withStyle style: UIBlurEffect.Style = .light) -> UIImageView {
     blur(withStyle: style)
     return base
