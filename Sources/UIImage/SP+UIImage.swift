@@ -110,7 +110,7 @@ public extension SPExtension where Base: UIImage{
   
   /// 图片尺寸: Bytes
   public var sizeAsBytes: Int
-  { return UIImageJPEGRepresentation(base, 1)?.count ?? 0 }
+  { return base.jpegData(compressionQuality: 1)?.count ?? 0 }
   
   /// 图片尺寸: KB
   public var sizeAsKB: Int {
@@ -127,11 +127,11 @@ public extension SPExtension where Base: UIImage{
   /// - Parameter quality: 图片质量 用于JPEG, 默认为 1
   /// - Returns: base64String
   public func base64String(quality: CGFloat = 1.0) -> String? {
-    if let data = UIImageJPEGRepresentation(base, quality) {
+    if let data = base.jpegData(compressionQuality: quality) {
       return data.base64EncodedString()
     }
     
-    if let data = UIImagePNGRepresentation(base) {
+    if let data = base.pngData() {
       return data.base64EncodedString()
     }
     
@@ -313,7 +313,7 @@ public extension SPExtension where Base: UIImage{
   /// - Parameter rate: 压缩比率
   /// - Returns: 新图
   public func compress(rate: CGFloat) -> Data? {
-    return UIImageJPEGRepresentation(base, rate)
+    return base.jpegData(compressionQuality: rate)
   }
   
 }

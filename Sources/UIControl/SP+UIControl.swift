@@ -23,7 +23,7 @@
 import UIKit
 
 public extension UIControl {
-  public func add(for event: UIControlEvents,
+  public func add(for event: UIControl.Event,
                   action: @escaping () -> ()) {
     guard let selector = selector(event: event) else { return }
     let act = ActionBlock(key: event.rawValue, action: action)
@@ -150,7 +150,7 @@ extension UIControl {
     }
   }
   
-  fileprivate func triggerAction(for: UIControl, event: UIControlEvents){
+  fileprivate func triggerAction(for: UIControl, event: UIControl.Event){
     let action = actionBlocks.filter { (item) -> Bool
       in return item.key == event.rawValue
       }.first
@@ -158,7 +158,7 @@ extension UIControl {
     act.action()
   }
   
-  fileprivate func selector(event: UIControlEvents) -> Selector? {
+  fileprivate func selector(event: UIControl.Event) -> Selector? {
     var selector: Selector?
     switch event.rawValue {
     // Touch events

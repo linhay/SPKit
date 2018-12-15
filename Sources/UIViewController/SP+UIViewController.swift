@@ -42,7 +42,7 @@ public extension UIViewController {
     }
     guard let rootViewController = UIApplication.shared.windows.filter({ (item) -> Bool in
       /// =.=,如果没手动设置的话...
-      return item.windowLevel == 0.0 && item.isKeyWindow
+      return item.windowLevel == UIWindow.Level.normal && item.isKeyWindow
     }).first?.rootViewController else {
       assert(false)
       return UIViewController()

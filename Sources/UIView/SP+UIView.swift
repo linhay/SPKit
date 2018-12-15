@@ -22,8 +22,9 @@
 
 import UIKit
 
+// MARK: - UIView 原生属性扩展
 public extension UIView{
-
+  
   /// 圆角
   public var cornerRadius: CGFloat {
     get{ return self.layer.cornerRadius }
@@ -32,13 +33,13 @@ public extension UIView{
       self.layer.masksToBounds = true
     }
   }
-
+  
   /// 边框宽度
   public var borderWidth: CGFloat {
     get{ return self.layer.borderWidth }
     set{ self.layer.borderWidth = newValue }
   }
-
+  
   /// 边框颜色
   public var borderColor: UIColor  {
     get{
@@ -49,7 +50,7 @@ public extension UIView{
     }
     set { self.layer.borderColor = newValue.cgColor }
   }
-
+  
   /// 背景图片
   public var cgImage: UIImage {
     get{
@@ -60,46 +61,72 @@ public extension UIView{
     }
     set { self.layer.contents = newValue.cgImage }
   }
-
+  
 }
 
 
-// MARK: - UIView
+
+// MARK: - UIView 属性扩展
 public extension SPExtension where Base: UIView{
-
-  /// 返回目标View所在的控制器UIViewController
+  
+  /** 返回视图所在的视图控制器
+   
+   示例:
+   
+   ```
+   let vc = UIView().sp.viewController
+   ```
+   
+   */
   public var viewController: UIViewController? {
-    get{
-      var next:UIView? = base
-      repeat{
-        if let vc = next?.next as? UIViewController{ return vc }
-        next = next?.superview
-      }while next != nil
-      return nil
-    }
+    var next:UIView? = base
+    repeat{
+      if let vc = next?.next as? UIViewController{ return vc }
+      next = next?.superview
+    }while next != nil
+    return nil
   }
-
-  /// 对当前View快照
-  public var snapshoot: UIImage{
-    get{
-      UIGraphicsBeginImageContextWithOptions(base.bounds.size, base.isOpaque, 0)
-      base.layer.render(in: UIGraphicsGetCurrentContext()!)
-      guard let snap = UIGraphicsGetImageFromCurrentImageContext() else {
-        UIGraphicsEndImageContext()
-        return UIImage()
-      }
-      UIGraphicsEndImageContext()
-      return snap
-    }
+  
+  /** 视图中层级关系描述
+   
+   示例:
+   
+   ```
+   <UIView; frame = (15 74; 345 201); autoresize = RM+BM; layer = <CALayer>>
+   | <UIView; frame = (8 8; 185 185); autoresize = RM+BM; layer = <CALayer>>
+   |    | <UIView; frame = (8 8; 169 76.5); autoresize = RM+BM; layer = <CALayer>>
+   |    |    | <UIButton; frame = (8 8; 153 30); opaque = NO; autoresize = RM+BM; layer = <CALayer>>
+   |    | <UIView; frame = (8 100.5; 169 76.5); autoresize = RM+BM; layer = <CALayer>>
+   | <UIView; frame = (201 8; 136 185); autoresize = RM+BM; layer = <CALayer>>
+   |    | <UILabel; frame = (8 8; 120 21); text = 'Label'; opaque = NO; autoresize = RM+BM; userInteractionEnabled = NO; layer = <_UILabelLayer>
+   ```
+   
+   */
+  public var description: String {
+    let recursiveDescription = base
+      .perform(Selector(("recursiveDescription")))?
+      .takeUnretainedValue() as! String
+    return recursiveDescription.replacingOccurrences(of: ":?\\s*0x[\\da-f]+(\\s*)",
+                                                     with: "$1",
+                                                     options: .regularExpression)
   }
-
-  /// 移除View全部子控件
-  public func removeSubviews() {
-    for _ in 0..<base.subviews.count {
-      base.subviews.last?.removeFromSuperview()
-    }
+  
+  /** 获取视图显示内容
+   
+   示例:
+   
+   ```
+   UIImageView(image: UIView().sp.snapshot)
+   ```
+   */
+  public var snapshot: UIImage? {
+    UIGraphicsBeginImageContextWithOptions(base.bounds.size, base.isOpaque, 0)
+    defer { UIGraphicsEndImageContext() }
+    guard let context = UIGraphicsGetCurrentContext() else { return nil }
+    base.layer.render(in: context)
+    return UIGraphicsGetImageFromCurrentImageContext()
   }
-
+  
   /// 设置LayerShadow,offset,radius
   public func setShadow(color: UIColor, offset: CGSize,radius: CGFloat) {
     base.layer.shadowColor = color.cgColor
@@ -112,3 +139,54 @@ public extension SPExtension where Base: UIView{
   
 }
 
+
+// MARK: - UIView 函数扩展
+public extension SPExtension where Base: UIView{
+  
+  
+  /** 添加子控件
+   
+   示例:
+   
+   ```
+   let aView = UIView()
+   let bView = UIView()
+   UIView().sp.addSubviews(aView,bView)
+   ```
+   
+   - Parameter subviews: 子控件数组
+   */
+  
+  public func addSubviews(_ subviews: UIView...) {
+    subviews.forEach { base.addSubview($0) }
+  }
+  
+  
+  /// 移除全部子控件
+  public func removeSubviews() {
+    base.subviews.forEach{ $0.removeFromSuperview() }
+  }
+  
+  
+  /** 添加子控件
+   
+   示例:
+   
+   ```
+   let tap = UITapGestureRecognizer(target: self, action: #selector(tapEvent(_:)))
+   let pan = UIPanGestureRecognizer(target: self, action: #selector(tapEvent(_:)))
+   UIView().addGestureRecognizers(tap,pan)
+   ```
+   
+   - Parameter subviews: 手势对象数组
+   */
+  func addGestureRecognizers(_ gestureRecognizers: UIGestureRecognizer...) {
+    gestureRecognizers.forEach { base.addGestureRecognizer($0) }
+  }
+  
+  /// 移除全部手势
+  public func removeGestureRecognizers() {
+    base.gestureRecognizers?.forEach{ base.removeGestureRecognizer($0) }
+  }
+  
+}

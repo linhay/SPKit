@@ -24,12 +24,12 @@ import UIKit
 
 public extension UIBarButtonItem {
   /// 快速定义一个NAV按钮
- public class func barButtonItem(buttonType: UIButtonType = .custom,
+ public class func barButtonItem(buttonType: UIButton.ButtonType = .custom,
                            norImage: UIImage?,
                            highImage: UIImage?,
                            target: AnyObject?,
                            action: Selector,
-                           forControlEvents: UIControlEvents = .touchUpInside)-> UIBarButtonItem {
+                           forControlEvents: UIControl.Event = .touchUpInside)-> UIBarButtonItem {
 
     let leftBtn = UIButton(type: buttonType)
 

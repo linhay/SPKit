@@ -28,18 +28,18 @@ public extension UITextField{
   public var placeholderColor: UIColor? {
     get{
       guard var attr = attributedPlaceholder?.attributes(at: 0, effectiveRange: nil),
-        let color = attr[NSAttributedStringKey.foregroundColor] as? UIColor else{ return textColor }
+        let color = attr[NSAttributedString.Key.foregroundColor] as? UIColor else{ return textColor }
       return color
     }
     set {
       guard let placeholder = self.placeholder, let color = newValue else { return }
       if var attr = attributedPlaceholder?.attributes(at: 0, effectiveRange: nil) {
-        attr[NSAttributedStringKey.foregroundColor] = newValue
+        attr[NSAttributedString.Key.foregroundColor] = newValue
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attr)
         return
       }
       
-      let attr = [NSAttributedStringKey.foregroundColor: color]
+      let attr = [NSAttributedString.Key.foregroundColor: color]
       attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attr)
     }
   }
@@ -54,11 +54,11 @@ public extension UITextField{
     set {
       guard let placeholder = self.placeholder, let font = newValue else { return }
       if var attr = attributedPlaceholder?.attributes(at: 0, effectiveRange: nil) {
-        attr[NSAttributedStringKey.font] = newValue
+        attr[NSAttributedString.Key.font] = newValue
         attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attr)
         return
       }
-      let attr = [NSAttributedStringKey.font: font]
+      let attr = [NSAttributedString.Key.font: font]
       attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attr)
     }
   }
