@@ -78,8 +78,7 @@ public extension UIImage{
   /// - Parameters:
   ///   - color: UIColor
   ///   - size: 图片大小
-  public convenience init?(color: UIColor,
-                           size: CGSize = CGSize(width: 1, height: 1)) {
+  public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
     if size.width <= 0 || size.height <= 0 { return nil }
     let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
     UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
