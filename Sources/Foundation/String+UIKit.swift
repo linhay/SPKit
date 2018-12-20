@@ -24,6 +24,27 @@ import UIKit
 
 // MARK: - 文本区域
 public extension String{
+  
+ /// 解析HTML样式
+ ///
+ /// https://github.com/Luur/SwiftTips#57-render-html-within-a-uilabel
+ ///
+ /// - Parameters:
+ ///   - fontName: 字体名称
+ ///   - fontSize: 字体大小
+ ///   - colorHex: 字体颜色
+ /// - Returns: 富文本
+ public func htmlAttributedString(with fontName: String, fontSize: Int, colorHex: String) -> NSAttributedString? {
+    do {
+      let cssPrefix = "<style>* { font-family: \(fontName); color: #\(colorHex); font-size: \(fontSize); }</style>"
+      let html = cssPrefix + self
+      guard let data = html.data(using: String.Encoding.utf8) else {  return nil }
+      return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+    } catch {
+      return nil
+    }
+  }
+  
   /// 获取字符串的Bounds
   ///
   /// - Parameters:

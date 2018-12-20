@@ -63,33 +63,28 @@ public extension UITextField{
     }
   }
   
+  
   /// 左边间距
-  public var leftPadding: CGFloat{
-    get{
-      return leftView?.frame.width ?? 0
+  @IBInspectable var leftPadding: CGFloat {
+    get {
+      return leftView?.frame.size.width ?? 0
     }
-    set{
-      guard let view = leftView else {
-        self.leftViewMode = .always
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: bounds.height))
-        return
-      }
-      view.bounds.size.width = newValue
+    set {
+      let view = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
+      leftView = view
+      leftViewMode = .always
     }
   }
   
   /// 右边间距
-  public var rightPadding: CGFloat{
-    get{
-      return rightView?.frame.width ?? 0
+  @IBInspectable var rightPadding: CGFloat {
+    get {
+      return rightView?.frame.size.width ?? 0
     }
-    set{
-      guard let view = rightView else {
-        self.rightViewMode = .always
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: bounds.height))
-        return
-      }
-      view.bounds.size.width = newValue
+    set {
+      let view = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
+      rightView = view
+      rightViewMode = .always
     }
   }
   

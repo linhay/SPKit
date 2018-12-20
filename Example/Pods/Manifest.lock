@@ -14,6 +14,7 @@ PODS:
     - SPKit/UIImage (= 0.4.0)
     - SPKit/UIImageView (= 0.4.0)
     - SPKit/UILabel (= 0.4.0)
+    - SPKit/UINavigationBar (= 0.4.0)
     - SPKit/UIStoryboard (= 0.4.0)
     - SPKit/UITextField (= 0.4.0)
     - SPKit/UIView (= 0.4.0)
@@ -35,6 +36,7 @@ PODS:
     - SPKit/Core
   - SPKit/UILabel (0.4.0):
     - SPKit/Core
+  - SPKit/UINavigationBar (0.4.0)
   - SPKit/UIStoryboard (0.4.0)
   - SPKit/UITextField (0.4.0)
   - SPKit/UIView (0.4.0):
@@ -59,7 +61,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SPKit: 960aed6c7920b57b63b86f3427c7dea2e5832042
+  SPKit: 80f58e4ff69234cd5ae5f4f0c466fde3ed7d04e5
   Then: 71866660c7af35a7343831f7668e7cd2b62ee0f2
 
 PODFILE CHECKSUM: 3152b9c3f53fdd5d0f868655800edf2b583806c9

@@ -24,7 +24,6 @@ class TestButtonViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     contentView.addSubview(button)
     
     button.do { (item) in

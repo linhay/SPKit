@@ -70,6 +70,10 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/UIStoryboard/**'
   end
   
+  s.subspec 'UINavigationBar' do |ss|
+    ss.source_files = 'Sources/UINavigationBar/**'
+  end
+  
   s.subspec 'UITextField' do |ss|
     ss.source_files = 'Sources/UITextField/**'
   end

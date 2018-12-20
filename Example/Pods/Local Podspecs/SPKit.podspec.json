@@ -91,6 +91,10 @@
       "source_files": "Sources/UIStoryboard/**"
     },
     {
+      "name": "UINavigationBar",
+      "source_files": "Sources/UINavigationBar/**"
+    },
+    {
       "name": "UITextField",
       "source_files": "Sources/UITextField/**"
     },
