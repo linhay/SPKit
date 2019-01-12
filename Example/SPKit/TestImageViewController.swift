@@ -31,14 +31,14 @@ class TestImageViewController: BaseViewController {
       self.imageView.image = nil
     })
     
-    items.append(TableElement(title: "download", subtitle: "从网络上下载图片") {
+    items.append(TableElement(title: "从网络上下载图片", subtitle: "imageView.sp.download(from: url,placeholder: image,completionHandler: nil)") {
       let url = URL(string: "https://raw.githubusercontent.com/linhay/SPKit/master/Screenshot/logo.jpg")!
       self.imageView.sp.download(from: url,
-                            placeholder: UIImage.init(named: "loading"),
+                            placeholder: UIImage(named: "loading"),
                             completionHandler: nil)
     })
     
-    items.append(TableElement(title: "blur", subtitle: "毛玻璃效果") {
+    items.append(TableElement(title: "毛玻璃效果", subtitle: "imageView.sp.blur()") {
       self.imageView.sp.blur()
     })
     

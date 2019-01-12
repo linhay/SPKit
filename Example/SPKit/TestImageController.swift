@@ -30,16 +30,16 @@ class TestImageController: BaseViewController {
       self.imageView.image = self.image
     })
     
-    items.append(TableElement(title: "image.sp.rounded()", subtitle: "图像处理: 裁圆") {
+    items.append(TableElement(title: "图像处理: 裁圆", subtitle: "image.sp.rounded()") {
       self.imageView.image = self.image.sp.rounded()
     })
     
-    items.append(TableElement(title: "UIImage(color: UIColor,size: CGSize)", subtitle: "获取指定颜色的图片") {
+    items.append(TableElement(title: "获取指定颜色的图片", subtitle: "UIImage(color: UIColor,size: CGSize)") {
       let image = UIImage(color: UIColor.red,size: CGSize(width: 50, height: 50))
       self.imageView.image = image
     })
     
-    items.append(TableElement(title: "image.sp.crop(bound: CGRect)", subtitle: "裁剪对应区域") {
+    items.append(TableElement(title: "裁剪对应区域", subtitle: "image.sp.crop(bound: CGRect)") {
       let image = self.image.sp.crop(bound: CGRect(x: 0,
                                                    y: 0,
                                                    width: self.image.size.width * 0.5,
@@ -47,7 +47,7 @@ class TestImageController: BaseViewController {
       self.imageView.image = image
     })
     
-    items.append(TableElement(title: "image.sp.round(...)", subtitle: "图像处理: 圆角") {
+    items.append(TableElement(title: "图像处理: 圆角", subtitle: "image.sp.round(...)") {
       let image = self.image.sp.rounded(radius: self.image.size.width * 0.5,
                                         corners: [.topRight,.bottomRight],
                                         borderWidth: 8,
@@ -56,12 +56,12 @@ class TestImageController: BaseViewController {
       self.imageView.image = image
     })
     
-    items.append(TableElement(title: "image.sp.scaled(toWidth: CGFloat)", subtitle: "缩放至指定宽度") {
+    items.append(TableElement(title: "缩放至指定宽度", subtitle: "image.sp.scaled(toWidth: CGFloat)") {
       let image = self.image.sp.scaled(toWidth: 50)
       self.imageView.image = image
     })
     
-    items.append(TableElement(title: "image.sp.scaled(toHeight: CGFloat)", subtitle: "缩放至指定高度") {
+    items.append(TableElement(title: "缩放至指定高度", subtitle: "image.sp.scaled(toHeight: CGFloat)") {
       let image = self.image.sp.scaled(toHeight: 80)
       self.imageView.image = image
     })

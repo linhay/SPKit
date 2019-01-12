@@ -31,8 +31,8 @@ class TestImageColorController: BaseViewController {
         self.imageView.image = self.image
       })
       
-      items.append(TableElement(title: "red", subtitle: "") {
-        self.imageView.image = self.image.sp.setTint(color: UIColor.red)
+      items.append(TableElement(title: "修改单色系图片颜色", subtitle: "image.sp.setTint(color: .red)") {
+        self.imageView.image = self.image.sp.setTint(color: .red)
       })
       
     }

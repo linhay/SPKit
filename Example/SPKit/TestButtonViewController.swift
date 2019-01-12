@@ -32,13 +32,13 @@ class TestButtonViewController: BaseViewController {
       })
     }
     
-    items.append(TableElement(title: "sp.verticalCenterImageAndTitle(spacing: 5)",
-                              subtitle: "图片与文字垂直居中") {
+    items.append(TableElement(title: "图片与文字垂直居中",
+                              subtitle: "button.sp.verticalCenterImageAndTitle(spacing: 5)") {
                                 self.button.sp.verticalCenterImageAndTitle(spacing: 5)
     })
     
-    items.append(TableElement(title: "sp.horizontalCenterTitleAndImage(spacing: 5)",
-                              subtitle: "文字与图片水平居中") {
+    items.append(TableElement(title: "文字与图片水平居中",
+                              subtitle: "button.sp.horizontalCenterTitleAndImage(spacing: 5)") {
       self.button.sp.horizontalCenterTitleAndImage(spacing: 5)
     })
   }
