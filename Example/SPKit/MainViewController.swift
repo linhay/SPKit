@@ -34,6 +34,11 @@ class MainViewController: BaseViewController {
         self.navigationController?.pushViewController(vc, animated: true)
       })
       
+      items.append(TableElement(title: "UIImage-UIColor", subtitle: "") {
+        let vc = TestImageColorController()
+        self.navigationController?.pushViewController(vc, animated: true)
+      })
+      
       items.append(TableElement(title: "UIButton", subtitle: "") {
         let vc = TestButtonViewController()
         self.navigationController?.pushViewController(vc, animated: true)

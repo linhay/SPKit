@@ -121,6 +121,25 @@ public extension SPExtension where Base: UIImage{
   public var template: UIImage { return base.withRenderingMode(.alwaysTemplate) }
 }
 
+public extension SPExtension where Base: UIImage{
+
+  /// 修改单色系图片颜色
+  ///
+  /// - Parameter color: 颜色
+  /// - Returns: 新图
+  public func setTint(color: UIColor) -> UIImage {
+    UIGraphicsBeginImageContextWithOptions(base.size, false, 1)
+    defer { UIGraphicsEndImageContext() }
+    color.setFill()
+    let bounds = CGRect(x: 0, y: 0, width: base.size.width, height: base.size.height)
+    UIRectFill(bounds)
+    base.draw(in: bounds, blendMode: CGBlendMode.overlay, alpha: 1)
+    base.draw(in: bounds, blendMode: CGBlendMode.destinationIn, alpha: 1)
+    return UIGraphicsGetImageFromCurrentImageContext() ?? base
+  }
+  
+}
+
 // MARK: - UIImage 图片处理
 public extension SPExtension where Base: UIImage{
   

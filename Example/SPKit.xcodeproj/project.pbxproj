@@ -13,6 +13,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9F9B28B06AF7540D5E92660D /* Pods_SPKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1A243F5BC56568AF35838AE /* Pods_SPKit_Example.framework */; };
 		CD0D1AA5202077F800B970D5 /* trunk.sh in Resources */ = {isa = PBXBuildFile; fileRef = CD0D1AA4202077F800B970D5 /* trunk.sh */; };
+		CD45272021E9C73B009BF1FF /* TestImageColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD45271F21E9C73B009BF1FF /* TestImageColorController.swift */; };
 		CD5365D4210C63A30056F174 /* create-apis.sh in Resources */ = {isa = PBXBuildFile; fileRef = CD5365D3210C63A30056F174 /* create-apis.sh */; };
 		CD5365D6210C66F00056F174 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = CD5365D5210C66EF0056F174 /* .travis.yml */; };
 		CD72E74121C4D40900DBAE3C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD72E74021C4D40900DBAE3C /* TestViewController.swift */; };
@@ -39,6 +40,7 @@
 		A311A2F19D7B39DF6E02A5D7 /* Pods-SPKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Example/Pods-SPKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B596306611761C0AA917C770 /* Pods-SPKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPKit_Example/Pods-SPKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CD0D1AA4202077F800B970D5 /* trunk.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = trunk.sh; path = ../trunk.sh; sourceTree = "<group>"; };
+		CD45271F21E9C73B009BF1FF /* TestImageColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestImageColorController.swift; sourceTree = "<group>"; };
 		CD5365D3210C63A30056F174 /* create-apis.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "create-apis.sh"; path = "../create-apis.sh"; sourceTree = "<group>"; };
 		CD5365D5210C66EF0056F174 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		CD72E74021C4D40900DBAE3C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				CD72E74821C4FAFC00DBAE3C /* TestButtonViewController.swift */,
 				CD72E74A21C5436E00DBAE3C /* TestImageViewController.swift */,
 				CD72E74C21C5478C00DBAE3C /* TestImageController.swift */,
+				CD45271F21E9C73B009BF1FF /* TestImageColorController.swift */,
 			);
 			name = "Example for SPKit";
 			path = SPKit;
@@ -280,6 +283,7 @@
 				CD72E74D21C5478C00DBAE3C /* TestImageController.swift in Sources */,
 				CD72E74F21C54D6700DBAE3C /* BaseViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				CD45272021E9C73B009BF1FF /* TestImageColorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
